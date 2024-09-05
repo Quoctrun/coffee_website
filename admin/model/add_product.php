@@ -18,7 +18,7 @@
         if (mysqli_query($conn, $sql)) {
             // Di chuyển file ảnh đã tải lên vào thư mục "img/product/"
             move_uploaded_file($image_tmp_name, '../view/img/product/' . $image);
-            header("Location: manage-products.php");
+            header("Location: ../controller/index.php?act=manage-products");
             exit();
             echo "Thêm sản phẩm thành công!";
         } else {
