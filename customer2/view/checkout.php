@@ -84,7 +84,7 @@
     </main>
     <script type="text/javascript" src="../view/js/product.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {  //getElementById('ok-button').addEventListener('click', function(e) {
+        document.getElementById('ok-button').addEventListener('click', function(e) {
         // Lấy dữ liệu giỏ hàng từ localStorage
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
