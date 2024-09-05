@@ -5,12 +5,12 @@
 
 // Show the Add Product form
 function showAddProductForm() {
-    document.getElementById('addProductForm').style.display = 'flex';
+    document.getElementById('addProductFr').style.display = 'flex';
 }
 
 // Hide the Add Product form
 function hideAddProductForm() {
-    document.getElementById('addProductForm').style.display = 'none';
+    document.getElementById('addProductFr').style.display = 'none';
     document.querySelectorAll('#addAccountForm input').forEach(input => input.value = '');
 }
 

@@ -43,7 +43,8 @@
     <button class="add-product-button" onclick="showAddProductForm()">Thêm Sản Phẩm</button>
 
     <!-- Product Addition Form (Initially Hidden) -->
-    <form id="addProductForm" method="post" enctype="multipart/form-data" style="display: none;">
+    <div id="addProductFr" style="display: none;">
+    <form id="addProductForm" method="post" enctype="multipart/form-data">
         <h3>Thêm Sản phẩm Mới</h3>
         <p>Loại sản phẩm</p>
         <select name="ca_id">
@@ -66,6 +67,7 @@
             <button type="button" name="cancel" onclick="hideAddProductForm()">Hủy</button>
         </div>
     </form>
+    </div>
 
         <h2>Product List</h2>
         <table>

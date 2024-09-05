@@ -11,19 +11,25 @@
     <header>
         <div class="logo"><img src="../view/img/logo.png" class="logo" alt="Caffe Monster Logo"></div>
         <div class="containt-navbar">
-            <h1>Tổng quan Quản Trị</h1>
+            <h1 id="Title-admin-d">Tổng quan Quản Trị</h1>
+            <h1 id="Title-admin-p" style="display: none;">Quản lý Sản Phẩm</h1>
+            <h1 id="Title-admin-od" style="display: none;">Quản lý Đơn Hàng</h1>
+            <h1 id="Title-admin-ac" style="display: none;">Quản lý Tài Khoản</h1>
+            <h1 id="Title-admin-s" style="display: none;">Quản lý Khuyến Mãi</h1>
+            <h1 id="Title-admin-n" style="display: none;">Quản lý thông báo</h1>
             <nav class="navbar">
                 <ul>
-                    <li><a href="index.php?act=manage-products">Quản lý Sản Phẩm</a></li>
-                    <li><a href="index.php?act=manage-orders">Quản lý Đơn Hàng</a></li>
-                    <li><a href="index.php?act=manage-accounts">Quản lý Tài Khoản</a></li>
-                    <li><a href="index.php?act=manage-sales">Quản lý Khuyến Mãi</a></li>
-                    <li><a href="index.php?act=manage-notification">Quản lý thông báo</a></li>
+                <li><a id="nav-admin-d" href="index.php" style="display: none;">Tổng quan Quản Trị</a></li>
+                    <li><a id="nav-admin-p" href="index.php?act=manage-products">Quản lý Sản Phẩm</a></li>
+                    <li><a id="nav-admin-od" href="index.php?act=manage-orders">Quản lý Đơn Hàng</a></li>
+                    <li><a id="nav-admin-ac" href="index.php?act=manage-accounts">Quản lý Tài Khoản</a></li>
+                    <li><a id="nav-admin-s" href="index.php?act=manage-sales">Quản lý Khuyến Mãi</a></li>
+                    <li><a id="nav-admin-n" href="index.php?act=manage-notification">Quản lý thông báo</a></li>
                 </ul>
             </nav>
         </div>
         <a href="#" class="user" id="user"><i class='bx bx-user'></i>
-            <div class="sub-menu-user">
+            <div class="sub-menu-user" id="subMenu">
                 <div class="user-names">
                     <b>Tên Tài khoản:</b>
                     <p id="user-name">Admin123</p>
@@ -34,3 +40,4 @@
             </div>
         </a>
     </header>
+

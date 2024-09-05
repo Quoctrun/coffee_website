@@ -20,10 +20,10 @@
             if($row['img'] != $img){
                 move_uploaded_file($img_tmp_name, '../view/img/product/'.$img);
             }
-            header('location: ../view/manage-products.php');
+            header('location: index.php?act=manage-products');
         }
         else{
-            echo "sai cmnr";
+            echo "sai";
         }
     
     }

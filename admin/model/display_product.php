@@ -42,7 +42,7 @@
             <td><img width="50" height="50" src="../view/img/product/<?php echo $row['img']; ?>" alt="<?php echo $row['product_name']; ?>"></td>
             <td><?php echo $category_map[$row['ca_id']]; ?></td> 
             <td>
-            <button onclick="location.href='../view/edit_product.php?this_id=<?php echo $row['product_id']; ?>'">Sửa</button>
+            <button onclick="location.href='index.php?act=edit_product&this_id=<?php echo $row['product_id']; ?>'">Sửa</button>
             <?php
             if ($row['status'] == 'active') {?>
                 <button onclick="location.href='../controller/hide_product.php?this_id=<?php echo $row['product_id']; ?>'">Ẩn</button>

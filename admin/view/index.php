@@ -14,7 +14,7 @@
                 <div class="overview-all">
                     <div class="overview-item">
                         <h2>20.000 ₫</h2>
-                        <p>Thu nhập (Hằng quí)</p>
+                        <p>Thu nhập (Hằng quý)</p>
                     </div>
                     <div class="overview-item">
                         <h2>532.255.000 ₫</h2>

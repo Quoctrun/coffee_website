@@ -28,6 +28,7 @@ header {
 }
 
 nav ul {
+    display: flex;
     list-style: none;
     padding: 0;
     text-align: center;
@@ -64,10 +65,6 @@ nav ul li a {
     width: 200px;
     z-index: 1000;
     font-size: 1rem;
-}
-
-.user:hover .sub-menu-user {
-    display: block;
 }
 
 .sub-menu-user::before {
@@ -161,8 +158,8 @@ main {
     background-color: #218838;
 }
 
-#addProductForm, #editProductForm, #confirmationModal {
-    display: flex;
+#addProductFr, #confirmationModal {
+    display: none;
     flex-direction: column;
     opacity: 1;
     pointer-events: all;
@@ -178,7 +175,7 @@ main {
     align-items: center;
 }
 
-form, .modal-content {
+.search-container, #addProductForm, .modal-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
