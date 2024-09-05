@@ -70,32 +70,6 @@ li {
     background-color: #555;
 }
 
-.sub-menu { 
-    visibility: hidden; 
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: black;
-    z-index: 1000;
-    transition: 0.3s;
-}
-
-.sub-menu li {
-    width: 150px;
-}
-
-.sub-menu li a {
-    display: block;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-}
-
-#navbar ul li:hover .sub-menu {
-    visibility: visible;
-    top: 40px;
-}
-
 .search-container { 
     display: flex;
     align-items: center;
@@ -130,7 +104,6 @@ li {
     margin-left: 20px;
 }
 
-
 /*ENVENLOPE*/
 .envelope-items {
     display: none;
@@ -147,10 +120,6 @@ li {
     border-radius: 5px;
     font-size: 1rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-#icon-group ul li:hover .envelope-items {
-    display: block;
 }
 
 .ev-item {
@@ -203,35 +172,6 @@ li {
     opacity: 0.5;
     background-color: #f0f0f0;
 }
-/*ICON-User*/
-.sub2-menu {
-    visibility: hidden;
-    position: absolute;
-    top: 70px;
-    right: 30px;
-    background-color:#a5a2a2;
-    z-index: 1000;
-    transition: 0.3s;
-    padding: 5px 20px 5px 0;
-    border-radius: 10px;
-}
-
-.sub2-menu li {
-    width: 100%;
-}
-
-.sub2-menu li a {
-    font-size: 1.5rem;
-    display: block;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-}
-
-#icon-group ul li:hover .sub2-menu {
-    visibility: visible;
-    top: 40px;
-}
 
 /*CART*/
 .cart {
@@ -252,12 +192,15 @@ li {
     background-color: #555;
 }
 
-#icon-group ul li > a {
+#icon-group ul li a {
     color: white;
     background-color: black;
-    border-radius: 5px;
     padding: 10px;
     z-index: 1000;
+}
+
+#icon-group >ul >li > a {
+    border-radius: 5px;
 }
 
 #icon-group ul li > a:hover {
@@ -293,10 +236,6 @@ sub {
     border-radius: 5px;
     font-size: 1rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.cart:hover .cart-items {
-    display: block;
 }
 
 .cart-item {
@@ -367,7 +306,106 @@ sub {
     background-color: #e64a19;
 }
 
+/* ICON-User */
+.sub2-menu {
+    visibility: hidden;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background-color: black;
+    z-index: 1000;
+    transition: 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: visibility 0s, opacity 0.3s linear; 
+}
 
+.sub2-menu li {
+    width: 100%;
+}
+
+.sub2-menu li a {
+    font-size: 1.5rem;
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sub2-menu li a:hover {
+    background-color: #555;
+    color: antiquewhite;
+}
+
+.user-names {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+.sub3-menu {
+    width: 200px;
+    visibility: hidden;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background-color: black;
+    z-index: 1000;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: visibility 0s, opacity 0.3s linear; 
+}
+
+.sub3-menu li a, .sub3-menu li button {
+    width: 200px;
+    font-size: 1.5rem;
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.sub3-menu li {
+    margin-left: 0 !important;
+}
+
+#logout {
+    width: 150px;
+    margin: 10px;
+    background-color: #f76c6c;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 10px;
+}
+
+#logout:hover {
+    background-color: #ff4747;
+    transform: scale(1.05); 
+}
+
+#editaccount:hover {
+    background-color: #555;
+    color: antiquewhite;
+}
+
+.sub3-menu li a:hover {
+    background-color: #555;
+    color: antiquewhite;
+}
+
+.activesup {
+    visibility: visible;
+    opacity: 1;
+}
 /*--HEADER Setting media--*/
 @media (min-width: 1600px) {
     .search-container {
@@ -556,9 +594,111 @@ sub {
         left: 2px;
         right: auto;
         width: 298px;
+    } 
+    .sub2-menu {
+        background-color:#333;
+        left: 50px;
+        width: 200px;
+    }
+
+    .sub3-menu {
+        background-color:#333;
+        left: 50px;
+        width: 200px;
+    }
+
+    .sub3-menu li button {
+        background-color:#333;
     }
 }
 
+@media (max-width: 600px) {
+    /*HEADER*/
+    .header {
+        padding: 0 0;
+        height: 50px;
+    }
+
+    .logo {
+        height: 3rem;
+        margin-left: 30px;
+    }
+
+    .mobile {
+        font-size: 2rem;
+        left: 5px;
+    }
+
+    .search-container {
+        margin-left: auto;
+        height: auto;
+        min-width: 180px;
+        padding: 0;
+        margin-right: auto;
+    }
+
+    .search-input {
+        padding: 0.5rem;
+        font-size: .75rem;
+    }
+
+    .search-button {
+        font-size: .75rem;
+    }
+
+    .cart {
+        height: auto;
+        padding-right: 13px;
+        font-size: 1.5rem;
+    }
+
+    sub {
+        font-size: .75rem;
+        top: 5px;
+        width: 15px;
+        height: 15px;
+    }
+
+    #navbar {
+        width: 200px;
+        padding: 30px 0;
+        padding-bottom: 100%;
+    }
+
+    .sub-menu {
+        left: 160px;
+        width: 140px;
+    }
+
+    #navbar > ul {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    #navbar ul li {
+        height: 80px;
+    }
+
+    #navbar ul li .nav-index {
+        padding-right: 0;
+    }
+
+    #navbar ul li > a {
+        padding-left: 20px;
+    }
+
+    #close {
+        top: 2px;
+        left: 10px;
+        font-size: 2.5rem;
+    }
+
+    #icon-group > ul {
+        padding: 0;
+        padding-top: 10px;
+        font-size: 1.5rem;
+    }    
+}
 /*--Css Main--*/
 body {
     font-family: Arial, sans-serif;

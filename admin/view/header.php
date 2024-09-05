@@ -33,7 +33,13 @@
                 <div class="user-names">
                     <b>Tên Tài khoản:</b>
                     <p id="user-name">Admin123</p>
+                    <b id="phone-number" style="font-size: 0.85rem;">Số điện thoại:</b><br>
+                    <span style="font-size: 0.75rem; color: dimgrey;">0354464053</span>
                 </div>
+                <hr>
+                <form method="post" action="#">
+                    <button type="submit" id="editaccount" name="editaccount">Chỉnh sửa</button>
+                </form>
                 <form method="post" action="../controller/sign_out.php">
                     <button type="submit" id="logout" name="logout">Đăng xuất</button>
                 </form>

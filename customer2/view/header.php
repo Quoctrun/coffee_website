@@ -22,13 +22,13 @@
                 <a href="#" id="close" aria-label="Close Navigation Menu"><i class='bx bx-x'></i></a>
             </ul>
         </nav>        
-        <from class="search-container">
+        <form class="search-container">
             <input type="search" class="search-input" placeholder="Tìm kiếm..." aria-label="Search">
             <button class="search-button" aria-label="Search Button"><i class='bx bx-search'></i></button>
-        </from>
+        </form>
         <div class="cart">
-            <a href="#"><i id="bx" class='bx bx-cart'></i><sub>0</sub></a>
-            <div class="cart-items">
+            <a href="#" id="cartIcon"><i id="bx" class='bx bx-cart'></i><sub>0</sub></a>
+            <div class="cart-items" id="cart-items-sup">
                 <div class="cart-item"></div>
                 <div class="cart-summary">
                     <div class="cart-total">Tổng tiền: 0 VNĐ</div>
@@ -39,25 +39,39 @@
         <div id="icon-group">
             <ul>
                 <li>
-                    <a class="noice" href="#" id="bx"><i class='bx bxs-envelope'></i><sub>0</sub></a>
-                    <div class="envelope-items">
-                        <div class="envelope-item"></div>
+                    <a class="noice" id="noice" href="#" id="bx"><i class='bx bxs-envelope'></i><sub>0</sub></a>
+                    <div class="envelope-items" id="envelope-items">
+                        <div class="envelope-item" style="overflow-y: auto; height: 200px;"></div>
                         <div class="envelope-summary">
                             <a href="#" class="checkread-button" id="markAllRead bx">Đọc tất cả</a>
                         </div>                
                     </div>
                 </li>
                 <li>
-                    <a class="user" href="#"><i class='bx bx-user'></i></a>
-                    <ul class="sub2-menu activesup">
-                        <li><a href="index.php?act=sign_up">Đăng ký</a></li>
-                        <li><a href="index.php?act=sign_in">Đăng nhập</a></li>
-                    </ul>
-                    <ul class="sub3-menu">
-                        <li><a href="index.php?act=purchase_history">Lịch sử mua hàng</a></li>
-                        <li><button id="logout">Đăng xuất</button></li>
-                    </ul>                    
+                    <a class="user" id="user" href="#"><i class='bx bx-user'></i></a>
+                    <?php if (!$isLoggedIn): ?>
+                        <ul class="sub2-menu" id="sub2-menu">
+                            <li><a href="index.php?act=sign_up">Đăng ký</a></li>
+                            <li><a href="index.php?act=sign_in">Đăng nhập</a></li>
+                        </ul>
+                    <?php else: ?>
+                        <ul class="sub3-menu" id="sub3-menu">
+                            <div class="user-names">
+                                <b>Tên Tài khoản:</b>
+                                <p id="user-name">Customer123</p>
+                                <b id="phone-number" style="font-size: 0.85rem;">Số điện thoại:</b>
+                                <span style="font-size: 0.75rem;">0354464053</span>
+                            </div>
+                            <hr>
+                            <li><button id="editaccount">Chỉnh sửa</button></li>
+                            <li><a href="index.php?act=purchase_history">Lịch sử mua hàng</a></li>
+                            <li style="display: flex; justify-content: center;">
+                                <button id="logout" style="text-align: center;">Đăng xuất</button>
+                            </li>
+                        </ul>
+                    <?php endif; ?>
                 </li>
             </ul>
-        </div>
     </header>
+</body>
+</html>

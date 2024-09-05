@@ -316,7 +316,4 @@ document.addEventListener('DOMContentLoaded', () => {
         // Nếu không có giá trị 'act' hoặc giá trị không hợp lệ, đặt lại lớp 'active' cho 'Trang chủ'
         document.querySelector('.nav-index').classList.add('active');
     }
-
-
 });
-
