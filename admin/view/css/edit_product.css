@@ -121,12 +121,29 @@ main {
     justify-content: center;
 }
 
-.form-edit {
+.form-edit, .form-yes{
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     width: 50%;
+}
+
+#backround-form-buttons {
+    display: none;
+    flex-direction: column;
+    opacity: 1;
+    pointer-events: all;
+    z-index: 1000;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.25s ease-in-out;
+    justify-content: center;
+    align-items: center;
 }
 
 form h3 {

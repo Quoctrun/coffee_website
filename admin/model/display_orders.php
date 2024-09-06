@@ -65,9 +65,9 @@
                 <td><?php echo $row['total_payment']; ?>đ</td>
                 <td><?php echo $row['Status']; ?></td>
                 <td>
-                    <button onclick="location.href='../view/view_order_detail.php?this_id=<?php echo $row['order_id']; ?>'">Xem chi tiết</button>
+                    <button onclick="location.href='index.php?act=view_order_detail&this_id=<?php echo $row['order_id']; ?>'">Xem chi tiết</button>
                     <br>
-                    <button onclick="location.href='../view/update_order.php?this_id=<?php echo $row['order_id']; ?>'">Cập nhật trạng thái</button>
+                    <button onclick="location.href='index.php?act=update_order&this_id=<?php echo $row['order_id']; ?>'">Cập nhật trạng thái</button>
                 </td>
             </tr>
         <?php endforeach; ?>

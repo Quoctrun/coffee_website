@@ -40,7 +40,7 @@
         </form>
 
          <!-- Add Product Button -->
-    <button class="add-product-button" onclick="showAddProductForm()">Thêm Sản Phẩm</button>
+    <button class="add-product-button" onclick="showElementById('addProductFr')">Thêm Sản Phẩm</button>
 
     <!-- Product Addition Form (Initially Hidden) -->
     <div id="addProductFr" style="display: none;">
@@ -63,8 +63,18 @@
         <input type="text" name="price">
         <br>
         <div class="form-buttons">
-            <button id="submit" type="submit" name="submit">Gửi</button>
-            <button type="button" name="cancel" onclick="hideAddProductForm()">Hủy</button>
+            <button id="br" onclick="showAddProductFormYes()">Gửi</button>
+            <button type="button" name="cancel" onclick="hideElementById('addProductFr')">Hủy</button>
+        </div>
+
+        <div id="backround-form-buttons">
+            <div class="form-yes" style="width: 30%; height: 30%;">
+                <h2 style="justify-content: center; display: flex; height: 55%;">Bạn có chắc chắn Xác nhận sửa đổi không.</h2>
+                <div class="form-buttons">
+                    <button id="submit br" type="submit" name="submit">Xác nhận</button>
+                    <button id ="br" type="button" onclick="hideAddProductFormYes()">Hủy</button>
+                </div>
+            </div>
         </div>
     </form>
     </div>

@@ -21,6 +21,12 @@
             case 'edit_product':
                 include "../view/edit_product.php";
                 break;
+            case 'view_order_detail':
+                include "../view/view_order_detail.php";
+                break;
+            case 'update_order':
+                include "../view/update_order.php";
+                break;
             default:
                 include "../view/index.php";
                 break;

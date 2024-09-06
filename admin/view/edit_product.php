@@ -38,7 +38,16 @@
         <input type="text" name="price" value="<?php echo $row['price']; ?>">
         <hr>
         <div style="display: flex; justify-content: center;">
-            <button name="btn">Edit</button>
+            <button id="br" onclick="showAddProductForm()">Edit</button>
+        </div>
+        <div id="backround-form-buttons">
+            <div class="form-yes" style="width: 30%; height: 30%;">
+                <h2 style="justify-content: center; display: flex; height: 55%;">Bạn có chắc chắn Xác nhận sửa đổi không.</h2>
+                <div class="form-buttons">
+                    <button id="submit br" name="btn">Xác nhận</button>
+                    <button id ="br" type="button" name="cancel" onclick="hideAddProductForm()">Hủy</button>
+                </div>
+            </div>
         </div>
     </form>
 </div>
@@ -53,4 +62,15 @@ function previewImage(event) {
     }
     reader.readAsDataURL(event.target.files[0]);
 }
+
+function showAddProductForm() {
+    document.getElementById('backround-form-buttons').style.display = 'flex';
+}
+
+function hideAddProductForm() {
+    document.getElementById('backround-form-buttons').style.display = 'none';
+}
+document.getElementById("br").addEventListener("click", function(event) {
+    event.preventDefault();
+})
 </script>

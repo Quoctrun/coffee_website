@@ -11,8 +11,28 @@ function showAddProductForm() {
 // Hide the Add Product form
 function hideAddProductForm() {
     document.getElementById('addProductFr').style.display = 'none';
+}
+
+function showElementById(id) {
+    document.getElementById(id).style.display = 'flex';
+}
+
+function hideElementById(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
+function showAddProductFormYes() {
+    document.getElementById('backround-form-buttons').style.display = 'flex';
+}
+
+function hideAddProductFormYes() {
+    document.getElementById('backround-form-buttons').style.display = 'none';
     document.querySelectorAll('#addAccountForm input').forEach(input => input.value = '');
 }
+
+document.getElementById("br").addEventListener("click", function(event) {
+    event.preventDefault();
+})
 
 // Add a new product
 // function addProduct() {
