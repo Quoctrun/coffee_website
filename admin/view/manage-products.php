@@ -33,9 +33,12 @@
             </fieldset>
         </div>
         
-
+        <?php
+        // Kiểm tra nếu có dữ liệu tìm kiếm từ form
+        $searchValue = isset($_POST['content']) ? $_POST['content'] : ''; // Lưu trữ giá trị tìm kiếm
+        ?>
         <form class="search-container" method="POST">
-            <input type="search" name="content" class="search-input" placeholder="Tìm kiếm..." aria-label="Search">
+            <input type="search" name="content" class="search-input" placeholder="Tìm kiếm..." aria-label="Search" value="<?php echo htmlspecialchars($searchValue); ?>">
             <button name="search" class="search-button" aria-label="Search Button"><i class='bx bx-search'></i></button>
         </form>
 
