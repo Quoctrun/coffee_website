@@ -231,7 +231,7 @@ form input[type="file"] {
     justify-content: space-between;
 }
 
-form button {
+form button, .yesbtnow {
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -244,16 +244,29 @@ form button {
     transition: background-color 0.3s ease;
 }
 
+.nobtnow {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    margin-right: 0;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 48%;
+    transition: background-color 0.3s ease;
+}
+
 form button:last-child {
     background-color: #dc3545;
     margin-right: 0;
 }
 
-form button:hover {
+form button:hover, .yesbtnow:hover {
     background-color: #218838;
 }
 
-form button:last-child:hover {
+form button:last-child:hover, .nobtnow:hover {
     background-color: #c82333;
 }
 

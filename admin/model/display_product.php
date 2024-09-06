@@ -56,8 +56,8 @@
             <div class="form-yes" style="width: 30%; height: 30%;">
                 <h2 style="justify-content: center; display: flex; height: 55%;">Bạn có chắc chắn Xác nhận sửa đổi không.</h2>
                 <div class="form-buttons">
-                    <button id="br" onclick="location.href='../controller/show_product.php?this_id=<?php echo $row['product_id']; ?>'">Xác nhận</button>
-                    <button id ="br" type="button" onclick="hideElementById('backround-display-buttons_id<?php echo $row['product_id']; ?>')">Hủy</button>
+                    <button class="yesbtnow" id="br" onclick="location.href='../controller/show_product.php?this_id=<?php echo $row['product_id']; ?>'">Xác nhận</button>
+                    <button class="nobtnow" id ="br" type="button" onclick="hideElementById('backround-display-buttons_id<?php echo $row['product_id']; ?>')">Hủy</button>
                 </div>
             </div>
         </div>
@@ -66,8 +66,8 @@
             <div class="form-yes" style="width: 30%; height: 30%;">
                 <h2 style="justify-content: center; display: flex; height: 55%;">Bạn có chắc chắn Xác nhận sửa đổi không.</h2>
                 <div class="form-buttons">
-                    <button id="br" onclick="location.href='../controller/hide_product.php?this_id=<?php echo $row['product_id']; ?>'">Xác nhận</button>
-                    <button id ="br" type="button" onclick="hideElementById('backround-hidden-buttons_id<?php echo $row['product_id']; ?>')">Hủy</button>
+                    <button class="yesbtnow" id="br" onclick="location.href='../controller/hide_product.php?this_id=<?php echo $row['product_id']; ?>'">Xác nhận</button>
+                    <button class="nobtnow" id ="br" type="button" onclick="hideElementById('backround-hidden-buttons_id<?php echo $row['product_id']; ?>')">Hủy</button>
                 </div>
             </div>
         </div>
