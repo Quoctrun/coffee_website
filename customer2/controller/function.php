@@ -64,7 +64,7 @@
 
     function getProductInfor($product_id, $infor) {
         global $conn;
-        $valid_columns = ['ca_id', 'product_name', 'price', 'status'];
+        $valid_columns = ['ca_id', 'product_name', 'price', 'status', 'img'];
         if (!in_array($infor, $valid_columns)) {
             return null; 
         }
@@ -109,7 +109,8 @@
             $product_name = getProductName($row['product_id']);
             $quantity = getProductQuantity($order_id, $row['product_id']);
             $price = getProductInfor($row['product_id'], 'price');
-            $order_detail[] = ['product_name' => $product_name, 'quantity' => $quantity, 'price' => $price];
+            $image = getProductInfor($row['product_id'], 'img');
+            $order_detail[] = ['product_name' => $product_name, 'quantity' => $quantity, 'price' => $price, 'img' => $image];
         }
         return $order_detail; 
     }

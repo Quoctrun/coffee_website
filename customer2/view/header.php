@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="vn">
 <head>
@@ -21,10 +23,16 @@
                 <li><a class="nav-sale" href="index.php?act=sale">Khuyến mãi</a></li>
                 <a href="#" id="close" aria-label="Close Navigation Menu"><i class='bx bx-x'></i></a>
             </ul>
-        </nav>        
-        <form class="search-container">
-            <input type="search" class="search-input" placeholder="Tìm kiếm..." aria-label="Search">
-            <button class="search-button" aria-label="Search Button"><i class='bx bx-search'></i></button>
+        </nav>      
+        <?php
+        // Kiểm tra nếu có dữ liệu tìm kiếm từ form
+        $searchValue = isset($_POST['search']) ? $_POST['search'] : ''; // Lưu trữ giá trị tìm kiếm
+        ?>  
+        <form class="search-container" method="POST" action="../controller/index.php?act=product">
+            <input name="search" type="search" class="search-input" placeholder="Tìm kiếm sản phẩm của cửa hàng..." aria-label="Search" value="<?php echo htmlspecialchars($searchValue); ?>">
+            <button name="search_button" class="search-button" type="submit" aria-label="Search Button">
+                <i class='bx bx-search'></i>
+            </button>
         </form>
         <div class="cart">
             <a href="#" id="cartIcon"><i id="bx" class='bx bx-cart'></i><sub>0</sub></a>
@@ -57,16 +65,19 @@
                     <?php else: ?>
                         <ul class="sub3-menu" id="sub3-menu">
                             <div class="user-names">
+                                <?php include "../model/customer_infor.php" ?>
                                 <b>Tên Tài khoản:</b>
-                                <p id="user-name">Customer123</p>
+                                <p id="user-name"><?php echo $user_infor['user_name']; ?></p>
                                 <b id="phone-number" style="font-size: 0.85rem;">Số điện thoại:</b>
-                                <span style="font-size: 0.75rem;">0354464053</span>
+                                <span style="font-size: 0.75rem;"><?php echo $user_infor['phone_number']; ?></span>
                             </div>
                             <hr>
                             <li><button id="editaccount">Chỉnh sửa</button></li>
                             <li><a href="index.php?act=purchase_history">Lịch sử mua hàng</a></li>
                             <li style="display: flex; justify-content: center;">
-                                <button id="logout" style="text-align: center;">Đăng xuất</button>
+                                <form method="post" action="../controller/sign_out.php">
+                                    <button type="submit" id="logout" style="text-align: center;" name="logout">Đăng xuất</button>
+                                </form>
                             </li>
                         </ul>
                     <?php endif; ?>
