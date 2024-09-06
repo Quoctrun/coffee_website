@@ -117,61 +117,34 @@ nav ul li a {
 
 main {
     padding: 20px;
-}
-
-.search-container {
     display: flex;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-}
-
-.search-input {
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 1000px;
-}
-
-.search-button {
-    padding: 8px 16px;
-    font-size: 16px;
-    margin-left: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-.search-button i {
-    font-size: 18px;
-}
-
-.search-button:hover {
-    background-color: #0056b3;
-}
-
-.add-account-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+table {
+    width: 100%;
+    border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-.add-account-button:hover {
-    background-color: #218838;
+table, th, td {
+    border: 1px solid #ddd;
 }
 
-#addAccountFr, #backround-form-buttons {
-    display: flex;
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+.form-edit, .form-yes{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 50%;
+}
+
+#backround-form-buttons {
+    display: none;
     flex-direction: column;
     opacity: 1;
     pointer-events: all;
@@ -185,14 +158,6 @@ main {
     transition: opacity 0.25s ease-in-out;
     justify-content: center;
     align-items: center;
-}
-
-.search-container, #addAccountForm, .form-yes {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    width: max(30%, 300px);
 }
 
 form h3 {
@@ -218,17 +183,8 @@ form input[type="text"] {
     box-sizing: border-box;
 }
 
-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-
 form input[type="file"] {
+    height: 20px;
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -267,21 +223,6 @@ form button:last-child:hover {
     background-color: #c82333;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-}
-
 button {
     padding: 5px 10px;
     margin: 5px 0;
@@ -296,14 +237,8 @@ button:hover {
 }
 
 form img {
-    width: 400px;
-}
-
-.error-message {
-    color: red;
-    font-size: 14px;
-    display: none;
-    margin-bottom: 10px;
+    width: 200px;
+    height: auto;
 }
 
 footer {
@@ -446,7 +381,7 @@ legend {
     color: #e20e23;
 }
 
-#detailAccountModal h2 {
+#detailNotificationModal h2 {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 20px;
@@ -455,7 +390,7 @@ legend {
     padding-bottom: 10px;
 }
 
-#detailAccountModal button {
+#detailNotificationModal button {
     width: 100%;
     background-color: #007bff;
     color: #fff;
@@ -468,7 +403,7 @@ legend {
     text-align: center;
 }
 
-#detailAccountModal button:hover {
+#detailNotificationModal button:hover {
     background-color: #0056b3;
 }
 
@@ -484,15 +419,6 @@ textarea {
     margin-bottom: 15px;
 }
 
-#accounts-list h2 {
+#notification-list h2 {
     color: red;
-}
-
-.overview-item {
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.overview-item:hover {
-    background-color: #f0f0f0; /* Màu nền khi hover */
 }

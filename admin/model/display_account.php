@@ -33,9 +33,6 @@
             <td><?php echo $row['user_name']; ?></td>
             <td><?php echo $row['phone_number']; ?></td>
             <td><?php echo $category_map[$row['level']]; ?></td> 
-            <td>
-            <button onclick="location.href='../view/edit_product.php?this_id=<?php echo $row['user_id']; ?>'">Sửa</button>
-            </td>
         </tr>
 <?php }
 ?>

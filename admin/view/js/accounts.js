@@ -2,19 +2,91 @@
 // function getAccountByName(name) {
 //     return accounts.find(account => account.name === name);
 // }
+document.getElementById("br").addEventListener("click", function(event) {
+    event.preventDefault();
+})
 
 // Show the Add Account form
 function showAddAccountForm() {
-    document.getElementById('addAccountForm').style.display = 'flex';
+    document.getElementById('addAccountFr').style.display = 'flex';
 }
 
 // Hide the Add Account form
 function hideAddAccountForm() {
-    document.getElementById('addAccountForm').style.display = 'none';
+    document.getElementById('addAccountFr').style.display = 'none';
     // Reset form fields
     document.querySelectorAll('#addAccountForm input').forEach(input => input.value = '');
 }
 
+function hideAccountYes() {
+    document.getElementById('backround-form-buttons').style.display = 'none';
+}
+
+// Hàm hiển thị form xác nhận sau khi kiểm tra dữ liệu
+function showAccountYes() {
+    let isValid = true;
+
+    // Lấy các giá trị từ các trường nhập liệu
+    const accountName = document.getElementById('account-name').value;
+    const accountPhone = document.getElementById('account-phone').value;
+    const accountPassword = document.getElementById('account-password').value;
+    const accountRole = document.getElementById('accountRole').value;
+
+    // Kiểm tra Tên tài khoản
+    if (!accountName) {
+        document.getElementById('name-error').innerText = "Vui lòng nhập tên tài khoản.";
+        document.getElementById('name-error').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('name-error').style.display = 'none';
+    }
+
+    // Kiểm tra Số điện thoại
+    if (!accountPhone) {
+        document.getElementById('phone-error').innerText = "Vui lòng nhập số điện thoại hợp lệ.";
+        document.getElementById('phone-error').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('phone-error').style.display = 'none';
+    }
+
+    // Kiểm tra Mật khẩu
+    if (!accountPassword) {
+        document.getElementById('password-error').innerText = "Vui lòng nhập mật khẩu.";
+        document.getElementById('password-error').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('password-error').style.display = 'none';
+    }
+
+    // Kiểm tra Vai trò
+    if (!accountRole) {
+        document.getElementById('accountRole-error').innerText = "Vui lòng chọn vai trò.";
+        document.getElementById('accountRole-error').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('accountRole-error').style.display = 'none';
+    }
+
+    // Nếu tất cả các trường đều hợp lệ thì hiển thị form xác nhận
+    if (isValid) {
+        document.getElementById('backround-form-buttons').style.display = 'flex';
+    }
+}
+
+// Ẩn thông báo lỗi khi người dùng bắt đầu nhập liệu lại
+document.getElementById('account-name').addEventListener('input', function() {
+    document.getElementById('name-error').style.display = 'none';
+});
+document.getElementById('account-phone').addEventListener('input', function() {
+    document.getElementById('phone-error').style.display = 'none';
+});
+document.getElementById('account-password').addEventListener('input', function() {
+    document.getElementById('password-error').style.display = 'none';
+});
+document.getElementById('accountRole').addEventListener('change', function() {
+    document.getElementById('accountRole-error').style.display = 'none';
+});
 // Add a new account
 // function addAccount() {
 //     const name = document.querySelector('.input-name').value;

@@ -289,6 +289,13 @@ form img {
     width: 400px;
 }
 
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+
+
 footer {
     display: flex;
     background-color: #333;
@@ -433,3 +440,4 @@ legend {
 .overview-item:hover {
     background-color: #f0f0f0; /* Màu nền khi hover */
 }
+

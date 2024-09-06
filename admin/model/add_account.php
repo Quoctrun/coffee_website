@@ -13,7 +13,7 @@
 
         // Thực hiện truy vấn
         if (mysqli_query($conn, $sql)) {
-            header("Location: manage-accounts.php");
+            header("Location: index.php?act=manage-accounts");
             exit();
             echo "Thêm sản phẩm thành công!";
         } else {

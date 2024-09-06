@@ -39,23 +39,37 @@
     
         <button class="add-account-button" onclick="showAddAccountForm()">Thêm Tài Khoản</button>
 
-        <div id="addAccountForm" style="display: none;">
-            <form method="POST">
+        <div id="addAccountFr" style="display: none;">
+            <form id="addAccountForm" method="POST">
                 <h3>Thêm Tài Khoản Mới</h3>
                 <label for="accountName">Tên Tài Khoản:</label>
-                <input class="input-name" type="text" placeholder="Tên tài khoản" autocomplete="tel" name="user_name" aria-invalid="false">
+                <input id="account-name" class="input-name" type="text" placeholder="Tên tài khoản" autocomplete="tel" name="user_name" aria-invalid="false">
+                <span class="error-message" id="name-error"></span>
                 <label for="accountPhone">Số điện thoại:</label>
-                <input class="input-phone" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone_number" aria-invalid="false">
+                <input id="account-phone" class="input-phone" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone_number" aria-invalid="false">
+                <span class="error-message" id="phone-error"></span>
                 <label for="accountPassword">Mật khẩu:</label>
-                <input class="input-password" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass" aria-invalid="false">
+                <input id="account-password" class="input-password" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass" aria-invalid="false">
+                <span class="error-message" id="password-error"></span>
                 <label for="accountRole">Vai trò:</label>
                 <select id="accountRole" name="level">
+                    <option value="">Chọn loại tài khoản</option>
                     <option value="0">Admin</option>
                     <option value="1">Khách hàng</option>
-                </select><br>
+                </select>
+                <span class="error-message" id="accountRole-error"></span>
                 <div class="form-buttons">
-                    <button type="submit" name="add">Thêm Tài Khoản</button> <!-- Đổi từ type="button" thành type="submit" -->
+                    <button id="br" onclick="showAccountYes()">Thêm Tài Khoản</button> <!-- Đổi từ type="button" thành type="submit" -->
                     <button type="button" name="cancel" onclick="hideAddAccountForm()">Hủy</button>
+                </div>
+                <div id="backround-form-buttons" style="display: none;">
+                    <div class="form-yes" style="width: 30%; height: 30%;">
+                        <h2 style="justify-content: center; display: flex; height: 55%;">Bạn có chắc chắn Xác nhận sửa đổi không.</h2>
+                        <div class="form-buttons">
+                            <button id="submit br" type="submit" name="add">Xác nhận</button>
+                            <button id ="br" type="button" onclick="hideAccountYes()">Hủy</button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -68,7 +82,6 @@
                     <th>Tên</th>
                     <th>Số điện thoại</th>
                     <th>Vai trò</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody id="accounts-list">

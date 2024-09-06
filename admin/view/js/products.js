@@ -19,20 +19,102 @@ function showElementById(id) {
 
 function hideElementById(id) {
     document.getElementById(id).style.display = 'none';
-}
-
-function showAddProductFormYes() {
-    document.getElementById('backround-form-buttons').style.display = 'flex';
+    document.querySelectorAll('#addProductForm input').forEach(input => input.value = '');
 }
 
 function hideAddProductFormYes() {
     document.getElementById('backround-form-buttons').style.display = 'none';
-    document.querySelectorAll('#addAccountForm input').forEach(input => input.value = '');
 }
 
 document.getElementById("br").addEventListener("click", function(event) {
     event.preventDefault();
 })
+
+// Hiển thị form xác nhận sau khi kiểm tra dữ liệu
+function showAddProductFormYes() {
+    let isValid = true;
+
+    // Lấy các giá trị từ các trường nhập liệu
+    const category = document.getElementById('category').value;
+    const productName = document.getElementById('product-name').value;
+    const image = document.getElementById('image').value;
+    const price = document.getElementById('price').value;
+
+    // Kiểm tra Loại sản phẩm
+    if (!category) {
+        document.getElementById('category-error').innerText = "Vui lòng chọn loại sản phẩm.";
+        document.getElementById('category-error').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('category-error').style.display = 'none';
+    }
+
+    // Kiểm tra Tên sản phẩm
+    if (!productName) {
+        document.getElementById('name-error').innerText = "Vui lòng nhập tên sản phẩm.";
+        document.getElementById('name-error').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('name-error').style.display = 'none';
+    }
+
+    // Kiểm tra Hình ảnh
+    if (!image) {
+        document.getElementById('image-error').innerText = "Vui lòng tải lên hình ảnh.";
+        document.getElementById('image-error').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('image-error').style.display = 'none';
+    }
+
+    // Kiểm tra Giá tiền
+    if (!price) {
+        document.getElementById('price-error').innerText = "Vui lòng nhập giá tiền.";
+        document.getElementById('price-error').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('price-error').style.display = 'none';
+    }
+
+    // Nếu tất cả các trường đều hợp lệ thì mới hiển thị form xác nhận
+    if (isValid) {
+        document.getElementById('backround-form-buttons').style.display = 'flex';
+    }
+}
+
+// Ẩn thông báo lỗi khi người dùng bắt đầu nhập liệu lại
+document.getElementById('category').addEventListener('input', function() {
+    document.getElementById('category-error').style.display = 'none';
+});
+document.getElementById('product-name').addEventListener('input', function() {
+    document.getElementById('name-error').style.display = 'none';
+});
+document.getElementById('image').addEventListener('input', function() {
+    document.getElementById('image-error').style.display = 'none';
+});
+document.getElementById('price').addEventListener('input', function() {
+    document.getElementById('price-error').style.display = 'none';
+});
+
+// Hiển thị ảnh xem trước khi người dùng chọn tệp ảnh
+document.getElementById('image').addEventListener('change', function(event) {
+    const file = event.target.files[0]; // Lấy tệp tin từ input
+    if (file) {
+        const reader = new FileReader();
+
+        // Đọc nội dung tệp ảnh và hiển thị trong thẻ img
+        reader.onload = function(e) {
+            const imgPreview = document.getElementById('image-preview');
+            imgPreview.src = e.target.result;
+            imgPreview.style.display = 'block'; // Hiển thị ảnh xem trước
+        }
+
+        // Đọc tệp dưới dạng URL
+        reader.readAsDataURL(file);
+    } else {
+        document.getElementById('image-preview').style.display = 'none'; // Ẩn ảnh xem trước nếu không có file
+    }
+});
 
 // Add a new product
 // function addProduct() {

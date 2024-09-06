@@ -50,20 +50,27 @@
     <form id="addProductForm" method="post" enctype="multipart/form-data">
         <h3>Thêm Sản phẩm Mới</h3>
         <p>Loại sản phẩm</p>
-        <select name="ca_id">
+        <select name="ca_id" id="category">
+            <option value="">Chọn loại sản phẩm</option>
             <option value="1">Caffe</option>
             <option value="2">Trà</option>
             <option value="3">Bánh</option>
         </select>
+        <span class="error-message" id="category-error"></span>
 
         <p>Tên sản phẩm</p>
-        <input type="text" name="pro_name">
+        <input type="text" name="pro_name" id="product-name">
+        <span class="error-message" id="name-error"></span>
 
         <p>Hình ảnh</p>
-        <input type="file" name="img">
+        <img id="image-preview" src="" alt="Xem trước hình ảnh" style="display: none; max-width: 100px; margin-top: 10px;">
+        <input type="file" name="img" id="image" accept="image/*">
+        <span class="error-message" id="image-error"></span>
 
-        <p>Giá tiền</p>
-        <input type="text" name="price">
+        <p>Giá tiền: "Đơn vị: ngàn VNĐ". Vd: 10 <=> 10 ngàn VNĐ</p>
+        <input type="text" name="price" id="price">
+        <span class="error-message" id="price-error"></span>
+
         <br>
         <div class="form-buttons">
             <button id="br" onclick="showAddProductFormYes()">Gửi</button>

@@ -14,7 +14,7 @@ echo "<p><strong>Mã đơn hàng:</strong> " . $order_id . "</p>";
 echo "<p><strong>Tên khách hàng:</strong> " . getUserInfor(getOrderInfor($order_id, 'user_id'), 'user_name') . "</p>";
 echo "<p><strong>Thời gian đặt hàng:</strong> " . getOrderInfor($order_id, 'order_time') . "</p>";
 ?>
-<link rel="stylesheet" href="../view/css/edit_product.css">
+<link rel="stylesheet" href="../view/css/detail_order.css">
 <table>
     <thead>
         <tr>
