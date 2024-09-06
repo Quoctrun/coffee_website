@@ -37,9 +37,7 @@
                     <span style="font-size: 0.75rem; color: dimgrey;">0354464053</span>
                 </div>
                 <hr>
-                <form method="post" action="#">
-                    <button type="submit" id="editaccount" name="editaccount">Chỉnh sửa</button>
-                </form>
+                <button type="submit" id="editaccount" name="editaccount" onclick="location.href='index.php?act=edit_account'">Chỉnh sửa</button>
                 <form method="post" action="../controller/sign_out.php">
                     <button type="submit" id="logout" name="logout">Đăng xuất</button>
                 </form>

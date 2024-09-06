@@ -27,6 +27,12 @@
             case 'update_order':
                 include "../view/update_order.php";
                 break;
+            case 'edit_account':
+                include "../view/edit_account.php";
+                break;
+            case 'change_password':
+                include "../view/change_password.php";
+                break;
             default:
                 include "../view/index.php";
                 break;

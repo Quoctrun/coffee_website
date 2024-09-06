@@ -72,7 +72,7 @@
                                 <span style="font-size: 0.75rem;"><?php echo $user_infor['phone_number']; ?></span>
                             </div>
                             <hr>
-                            <li><button id="editaccount">Chỉnh sửa</button></li>
+                            <li><button id="editaccount" onclick="location.href='index.php?act=edit_account'">Chỉnh sửa</button></li>
                             <li><a href="index.php?act=purchase_history">Lịch sử mua hàng</a></li>
                             <li style="display: flex; justify-content: center;">
                                 <form method="post" action="../controller/sign_out.php">

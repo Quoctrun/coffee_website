@@ -19,24 +19,8 @@
                 </div>
             </div>
         </section>
-
+        
         <section class="main-main">
-            <div class="containt-first">
-                <img class="img-mm-first" src="../view/img/img.jpg">
-                <div class="text-mm-first">
-                    <b class="title-mm-first">Hạt cà phê - Khởi nguồn của đam mê</b>
-                    <p class="cnt-mm-first">Chúng tôi bắt đầu từ những hạt cà phê nguyên chất, được tuyển chọn kỹ lưỡng từ những vùng đất trù phú nhất. Qua quá trình chế biến công phu và tỉ mỉ, những hạt cà phê ấy trở thành những ly cà phê thơm ngon và đậm đà, mang đến cho bạn những khoảnh khắc thưởng thức tuyệt vời. Không chỉ đơn thuần là hương vị của cà phê, mà đó còn là niềm đam mê chúng tôi dồn vào từng sản phẩm hoàn hảo. Hãy cùng chúng tôi khám phá hành trình từ hạt cà phê đến ly cà phê, và cùng chia sẻ niềm đam mê với chúng tôi. Chúng tôi tin rằng, mỗi giọt cà phê sẽ mang lại cho bạn niềm vui và sự hài lòng.</p>
-                </div>
-            </div>
-
-            <div class="containt-last">
-                <div class="text-mm-last">
-                    <b class="title-mm-last">Đội ngũ nhân viên tận tâm và nhiệt huyết</b>
-                    <p class="cnt-mm-last">Tại Coffee Monster, chúng tôi luôn tự hào về đội ngũ nhân viên nhiệt tình và tận tâm của mình. Nhân viên của chúng tôi không chỉ đơn thuần là những người pha chế cà phê mà còn là những người mang trong mình tình yêu và niềm đam mê mãnh liệt với cà phê. Chúng tôi luôn sẵn sàng chia sẻ niềm đam mê này với khách hàng, từ khâu chọn lựa hạt cà phê nguyên chất cho đến quy trình chế biến tỉ mỉ để tạo ra những ly cà phê tuyệt hảo. Nhân viên tại Coffee Monster không chỉ đem đến cho khách hàng những sản phẩm chất lượng cao mà còn mang đến những trải nghiệm thú vị khi thưởng thức cà phê. Chúng tôi luôn cố gắng không ngừng để khách hàng có thể cảm nhận được tình yêu và niềm đam mê dành cho cà phê qua mỗi ly cà phê mà chúng tôi phục vụ. Với tinh thần nhiệt huyết và tận tâm, đội ngũ nhân viên của Coffee Monster đã góp phần xây dựng nên một thương hiệu cà phê độc đáo và đáng nhớ. Chúng tôi luôn mong muốn chia sẻ với khách hàng hành trình từ hạt cà phê đến tách cà phê, và cùng họ trải nghiệm niềm đam mê chung với cà phê.</p>
-                </div>
-                <img class="img-mm-last" src="../view/img/nhansu.jpg">
-            </div>
-
             <div class="hot-product">
                 <div class="title-and-views">
                     <h2>Sản phẩm nổi bật</h2>
@@ -104,6 +88,22 @@
                         </li>
                     </ul>
                 </section>
+            </div>
+
+            <div class="containt-first">
+                <img class="img-mm-first" src="../view/img/img.jpg">
+                <div class="text-mm-first">
+                    <b class="title-mm-first">Hạt cà phê - Khởi nguồn của đam mê</b>
+                    <p class="cnt-mm-first">Chúng tôi bắt đầu từ những hạt cà phê nguyên chất, được tuyển chọn kỹ lưỡng từ những vùng đất trù phú nhất. Qua quá trình chế biến công phu và tỉ mỉ, những hạt cà phê ấy trở thành những ly cà phê thơm ngon và đậm đà, mang đến cho bạn những khoảnh khắc thưởng thức tuyệt vời. Không chỉ đơn thuần là hương vị của cà phê, mà đó còn là niềm đam mê chúng tôi dồn vào từng sản phẩm hoàn hảo. Hãy cùng chúng tôi khám phá hành trình từ hạt cà phê đến ly cà phê, và cùng chia sẻ niềm đam mê với chúng tôi. Chúng tôi tin rằng, mỗi giọt cà phê sẽ mang lại cho bạn niềm vui và sự hài lòng.</p>
+                </div>
+            </div>
+
+            <div class="containt-last">
+                <div class="text-mm-last">
+                    <b class="title-mm-last">Đội ngũ nhân viên tận tâm và nhiệt huyết</b>
+                    <p class="cnt-mm-last">Tại Coffee Monster, chúng tôi luôn tự hào về đội ngũ nhân viên nhiệt tình và tận tâm của mình. Nhân viên của chúng tôi không chỉ đơn thuần là những người pha chế cà phê mà còn là những người mang trong mình tình yêu và niềm đam mê mãnh liệt với cà phê. Chúng tôi luôn sẵn sàng chia sẻ niềm đam mê này với khách hàng, từ khâu chọn lựa hạt cà phê nguyên chất cho đến quy trình chế biến tỉ mỉ để tạo ra những ly cà phê tuyệt hảo. Nhân viên tại Coffee Monster không chỉ đem đến cho khách hàng những sản phẩm chất lượng cao mà còn mang đến những trải nghiệm thú vị khi thưởng thức cà phê. Chúng tôi luôn cố gắng không ngừng để khách hàng có thể cảm nhận được tình yêu và niềm đam mê dành cho cà phê qua mỗi ly cà phê mà chúng tôi phục vụ. Với tinh thần nhiệt huyết và tận tâm, đội ngũ nhân viên của Coffee Monster đã góp phần xây dựng nên một thương hiệu cà phê độc đáo và đáng nhớ. Chúng tôi luôn mong muốn chia sẻ với khách hàng hành trình từ hạt cà phê đến tách cà phê, và cùng họ trải nghiệm niềm đam mê chung với cà phê.</p>
+                </div>
+                <img class="img-mm-last" src="../view/img/nhansu.jpg">
             </div>
 
             <div class="contain-us-all">
