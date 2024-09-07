@@ -1,3 +1,5 @@
+<?php include "../model/change_pasword.php";?>
+
 <link rel="stylesheet" type="text/css" href="../view/css/change_password.css">
     <!--main section-->
     <main class="main">
@@ -8,7 +10,7 @@
             </div>
         </div>
         <div class="notification-container">
-            <botton id="back-button" class="back-button">Trở về</botton>
+            <botton id="back-button" class="back-button" onclick="location.href='../controller/index.php?act=edit_account'">Trở về</botton>
             <hr style="margin-top: 10px; margin-bottom: 10px;">
             <h1 id="notification-title">Thay đổi mật khẩu</h1>
             <div style="display: flex; width: 100%; align-items: center; justify-content: center; padding-bottom: 5px;">
@@ -17,7 +19,7 @@
                 <div class="line-tt-pg"></div>
             </div>
 
-            <form class="contents">
+            <form class="contents" method = "POST">
                 <p>Nhập mật khẩu cũ</p>
                 <input class="input-field" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass_old" aria-invalid="false">
                 <hr style="margin: 20px;">
@@ -27,7 +29,7 @@
                 <input class="input-field" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass_new_2" aria-invalid="false">
                 <hr style="margin-top: 10px;">
                 <div class="button-container">
-                    <button id="edit-btn" type="button" onclick="showAddProductForm()">Change Password</button>
+                    <button id="edit-btn" name="btn" type="submit" onclick="showAddProductForm()">Change Password</button>
                 </div>
 
                 <div id="backround-form-buttons" class="confirmation-box">

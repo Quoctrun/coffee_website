@@ -1,3 +1,6 @@
+<?php include "../model/customer_infor.php" ?>
+<?php include "../model/edit_account.php" ?>
+
 <link rel="stylesheet" type="text/css" href="../view/css/styleEditAccount.css">
     <!--main section-->
     <main class="main">
@@ -8,7 +11,7 @@
             </div>
         </div>
         <div class="notification-container">
-            <botton id="back-button" class="back-button">Trở về</botton>
+        <botton id="back-button" class="back-button" onclick="location.href='../controller/index.php'">Trở về</botton>
             <hr style="margin-top: 10px; margin-bottom: 10px;">
             <h1 id="notification-title">Chỉnh sửa tài khoản</h1>
             <div style="display: flex; width: 100%; align-items: center; justify-content: center; padding-bottom: 5px;">
@@ -17,14 +20,14 @@
                 <div class="line-tt-pg"></div>
             </div>
 
-            <form class="contents">
+            <form class="contents" method = "POST">
                 <p>Tên tài khoản</p>
-                <input type="text" name="user_name" value="Cao Tiến Đạt" class="input-field">
+                <input type="text" name="user_name" value="<?php echo $user_infor['user_name']; ?>" class="input-field">
                 <p>Số điện thoại</p>
-                <input type="text" name="use_phone" value="0354464053" class="input-field">
+                <input type="text" name="phone_number" value="<?php echo $user_infor['phone_number']; ?>" class="input-field">
                 <hr style="margin-top: 10px;">
                 <div class="button-container">
-                    <button id="edit-btn" type="button" onclick="showAddProductForm()">Edit</button>
+                    <button id="edit-btn" name="btn" type="submit" onclick="showAddProductForm()">Edit</button>
                     <button id="change-password-btn" type="button" onclick="location.href='index.php?act=change_password'">Change Password</button>
                 </div>
 

@@ -10,7 +10,8 @@
         $sql = "SELECT* FROM user WHERE phone_number = '$phone_number' AND user_pass = '$user_pass' AND level = 0";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) == 1){
-            $_SESSION['mySession'] = $username;
+            $user = mysqli_fetch_assoc($result);
+            $_SESSION['mySession'] = $user['user_id'];
             header("location:../controller/index.php");
         }else{
             echo "Incorrect account name or password!";

@@ -31,10 +31,11 @@
         <a href="#" class="user" id="user"><i class='bx bx-user'></i>
             <div class="sub-menu-user" id="subMenu">
                 <div class="user-names">
+                    <?php include "../model/admin_infor.php" ?>
                     <b>Tên Tài khoản:</b>
-                    <p id="user-name">Admin123</p>
+                    <p id="user-name"><?php echo $user_infor['user_name']; ?></p>
                     <b id="phone-number" style="font-size: 0.85rem;">Số điện thoại:</b><br>
-                    <span style="font-size: 0.75rem; color: dimgrey;">0354464053</span>
+                    <span style="font-size: 0.75rem; color: dimgrey;"><?php echo $user_infor['phone_number']; ?></span>
                 </div>
                 <hr>
                 <button type="submit" id="editaccount" name="editaccount" onclick="location.href='index.php?act=edit_account'">Chỉnh sửa</button>
