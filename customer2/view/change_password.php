@@ -29,7 +29,7 @@
                 <input class="input-field" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass_new_2" aria-invalid="false">
                 <hr style="margin-top: 10px;">
                 <div class="button-container">
-                    <button id="edit-btn br" onclick="showAddProductForm()">Change Password</button>
+                    <button id="edit-btn" onclick="showAddProductForm()">Change Password</button>
                 </div>
 
                 <div id="backround-form-buttons" class="confirmation-box">
@@ -53,10 +53,6 @@
             document.getElementById('backround-form-buttons').style.display = 'none';
         }
 
-        document.getElementById("br").addEventListener("click", function(event) {
-            event.preventDefault();
-        })
-
         const dateSendElement = document.getElementById('date-send');
         if (dateSendElement) {
             const currentDate = new Date();
@@ -70,6 +66,10 @@
             const year = date.getFullYear();
             return `${day}-${month}-${year}`;
         }
+
+        document.getElementById("edit-btn").addEventListener("click", function(event) {
+            event.preventDefault();
+        })
     </script>
     <script type="text/javascript" src="../view/js/script.js"></script>
 </body>

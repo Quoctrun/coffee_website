@@ -27,7 +27,7 @@
                 <input type="text" name="phone_number" value="<?php echo $user_infor['phone_number']; ?>" class="input-field">
                 <hr style="margin-top: 10px;">
                 <div class="button-container">
-                    <button id="edit-btn" name="btn" type="submit" onclick="showAddProductForm()">Edit</button>
+                    <button id="edit-btn" onclick="showAddProductForm()">Edit</button>
                     <button id="change-password-btn" type="button" onclick="location.href='index.php?act=change_password'">Change Password</button>
                 </div>
 
@@ -35,7 +35,7 @@
                     <div class="form-yes">
                         <h2>Bạn có chắc chắn Xác nhận sửa đổi không.</h2>
                         <div class="form-buttons">
-                            <button id="confirm-btn-yes" name="">Xác nhận</button>
+                            <button id="confirm-btn-yes" name="btn" type="submit">Xác nhận</button>
                             <button id="cancel-btn" type="button" name="cancel" onclick="hideAddProductForm()">Hủy</button>
                         </div>
                     </div>
@@ -65,6 +65,10 @@
             const year = date.getFullYear();
             return `${day}-${month}-${year}`;
         }
+
+        document.getElementById("edit-btn").addEventListener("click", function(event) {
+            event.preventDefault();
+        })
     </script>
     <script type="text/javascript" src="../view/js/script.js"></script>
 </body>
