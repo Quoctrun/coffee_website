@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if(!isset($_SESSION['mySession'])){
         header('location: ../view/sign_in.php');
     }
@@ -74,7 +76,7 @@
         <br>
         <div class="form-buttons">
             <button id="br" onclick="showAddProductFormYes()">Gửi</button>
-            <button type="button" name="cancel" onclick="hideElementById('addProductFr')">Hủy</button>
+            <button id="eixnowbt" type="button" name="cancel" onclick="hideElementById('addProductFr')">Hủy</button>
         </div>
 
         <div id="backround-form-buttons">

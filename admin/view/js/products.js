@@ -96,6 +96,14 @@ document.getElementById('price').addEventListener('input', function() {
     document.getElementById('price-error').style.display = 'none';
 });
 
+//Ẩn khi hủy
+document.getElementById('eixnowbt').addEventListener("click", function() {
+    document.getElementById('category-error').style.display = 'none';
+    document.getElementById('name-error').style.display = 'none';
+    document.getElementById('image-error').style.display = 'none';
+    document.getElementById('price-error').style.display = 'none';
+});
+
 // Hiển thị ảnh xem trước khi người dùng chọn tệp ảnh
 document.getElementById('image').addEventListener('change', function(event) {
     const file = event.target.files[0]; // Lấy tệp tin từ input

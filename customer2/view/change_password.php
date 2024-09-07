@@ -19,15 +19,18 @@
 
             <form class="contents" method = "POST" action="../model/change_password.php">
                 <p>Nhập mật khẩu cũ</p>
-                <input class="input-field" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass_old" aria-invalid="false">
+                <input id="pswrd_old" class="input-field" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass_old" aria-invalid="false">
+                <span class="error-message" id="pswrd_old-error"></span>
                 <hr style="margin: 20px;">
                 <p>Nhập mật khẩu mới</p>
-                <input class="input-field" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass_new_1" aria-invalid="false">
+                <input id="pswd_new1" class="input-field" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass_new_1" aria-invalid="false">
                 <p>Nhập lại mật khẩu mới</p>
-                <input class="input-field" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass_new_2" aria-invalid="false">
+                <span class="error-message" id="pswd_new1-error"></span>
+                <input id="pswd_new2" class="input-field" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass_new_2" aria-invalid="false">
+                <span class="error-message" id="pswd_new2-error"></span>
                 <hr style="margin-top: 10px;">
                 <div class="button-container">
-                    <button id="edit-btn" name="btn" type="submit" onclick="showAddProductForm()">Change Password</button>
+                    <button id="edit-btn" onclick="showAddProductForm()">Change Password</button>
                 </div>
 
                 <div id="backround-form-buttons" class="confirmation-box">
@@ -44,8 +47,60 @@
     </main>
     <script>
         function showAddProductForm() {
-            document.getElementById('backround-form-buttons').style.display = 'flex';
+            let isValid = true;
+
+            // Lấy các giá trị từ các trường nhập liệu
+            const passwordOld = document.getElementById('pswrd_old').value;
+            const passwordNew1 = document.getElementById('pswd_new1').value;
+            const passwordNew2 = document.getElementById('pswd_new2').value;
+
+            // Kiểm tra mật khẩu cũ
+            if (!passwordOld) {
+                document.getElementById('pswrd_old-error').innerText = "Vui lòng nhập mật khẩu cũ.";
+                document.getElementById('pswrd_old-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('pswrd_old-error').style.display = 'none';
+            }
+
+            // Kiểm tra mật khẩu mới
+            if (!passwordNew1) {
+                document.getElementById('pswd_new1-error').innerText = "Vui lòng nhập mật khẩu mới.";
+                document.getElementById('pswd_new1-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('pswd_new1-error').style.display = 'none';
+            }
+
+            // Kiểm tra mật khẩu nhập lại
+            if (!passwordNew2) {
+                document.getElementById('pswd_new2-error').innerText = "Vui lòng nhập lại mật khẩu mới.";
+                document.getElementById('pswd_new2-error').style.display = 'block';
+                isValid = false;
+            } else if (passwordNew1 !== passwordNew2) {
+                document.getElementById('pswd_new2-error').innerText = "Mật khẩu nhập lại không khớp.";
+                document.getElementById('pswd_new2-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('pswd_new2-error').style.display = 'none';
+            }
+
+            // Nếu hợp lệ, hiển thị form xác nhận
+            if (isValid) {
+                document.getElementById('backround-form-buttons').style.display = 'flex';
+            }
         }
+
+        // Ẩn thông báo lỗi khi người dùng bắt đầu nhập liệu lại
+        document.getElementById('pswrd_old').addEventListener('input', function() {
+            document.getElementById('pswrd_old-error').style.display = 'none';
+        });
+        document.getElementById('pswd_new1').addEventListener('input', function() {
+            document.getElementById('pswd_new1-error').style.display = 'none';
+        });
+        document.getElementById('pswd_new2').addEventListener('input', function() {
+            document.getElementById('pswd_new2-error').style.display = 'none';
+        });
 
         function hideAddProductForm() {
             document.getElementById('backround-form-buttons').style.display = 'none';
@@ -64,6 +119,10 @@
             const year = date.getFullYear();
             return `${day}-${month}-${year}`;
         }
+
+        document.getElementById("edit-btn").addEventListener("click", function(event) {
+            event.preventDefault();
+        })
     </script>
     <script type="text/javascript" src="../view/js/script.js"></script>
 </body>
