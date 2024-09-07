@@ -23,29 +23,23 @@
                 <b style="margin-left: 5px;">Sản phẩm đặt mua:</b>
                 <div class="detail-products"></div>
             </div>
-            <div class="inf-cus-order">
-                <b>Thông tin người nhận hàng:*</b>
-                <div class="detail-inf-cus-order">
-                    <input id="odrnamecus" class="input-name" type="text" placeholder="Tên người nhận" autocomplete="tel" name="name" aria-invalid="false" value="<?php echo $result['user_name']; ?>">
-                    <span class="error-message" id="odrnamecus-error"></span>
-                    <input id="odrphonecus" class="input-phone" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone" aria-invalid="false" value="<?php echo $result['phone_number']; ?>">
-                    <span class="error-message" id="odrphonecus-error"></span>
-                </div>
-            </div>
             <div class="delivery-method">
                 <fieldset style="padding: 10px 20px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px;">
                     <legend style="margin: 0 20px;">
                         <b>Phương thức giao hàng:*</b>
                     </legend>
                     <div>
-                        <input type="radio" id="standard" name="delivery" value="standard" checked>
-                        <label for="standard">Đến nhận tại cửa hàng</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="express" name="delivery" value="express" disabled>
+                        <input type="radio" id="express" name="delivery" value="express" checked>
                         <label for="express" style="color:#a5a2a2;">Giao hàng tận nơi</label>
                     </div>
                 </fieldset>
+            </div>
+            <div class="inf-cus-order">
+                <b>Địa chỉ nhận hàng:*</b>
+                <div class="detail-inf-cus-order">
+                    <textarea class="input-id" id="oderaddress" placeholder="Nhập địa chỉ nhận hàng" autocomplete="tel" aria-invalid="false" name=""></textarea>
+                    <span class="error-message" id="oderaddress-error"></span>
+                </div>
             </div>
             <div class="payment-method">
                 <fieldset style="padding: 10px 20px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px;">
@@ -75,10 +69,12 @@
                 <p id="total-mn"></p>
             </div>
 
+
             <!-- hidden form -->
             <input type="hidden" id="cart_data" name="cart_data">
             <input type="hidden" id="total_amount" name="total_amount">
             <input type="hidden" id="order_date" name="order_date">
+            
             <button id="confirm-btn-yes" class="yes-button" onclick="showAddProductForm()">Đặt hàng</button>
 
             <div id="backround-form-buttons" class="confirmation-box">
@@ -141,27 +137,14 @@
         function showAddProductForm() {
             let isValid = true;
 
-            const passwordOld = document.getElementById('odrnamecus').value;
-            const passwordNew1 = document.getElementById('odrphonecus').value;
+            const passwordOld = document.getElementById('oderaddress').value;
 
             if (!passwordOld) {
-                document.getElementById('odrnamecus-error').innerText = "Vui lòng nhập tên người đặt.";
-                document.getElementById('odrnamecus-error').style.display = 'block';
+                document.getElementById('oderaddress-error').innerText = "Vui lòng nhập địa chỉ giao hàng.";
+                document.getElementById('oderaddress-error').style.display = 'block';
                 isValid = false;
             } else {
-                document.getElementById('odrnamecus-error').style.display = 'none';
-            }
-
-            if (!passwordNew1) {
-                document.getElementById('odrphonecus-error').innerText = "Vui lòng nhập số điện thoại người đặt.";
-                document.getElementById('odrphonecus-error').style.display = 'block';
-                isValid = false;
-            } else {
-                document.getElementById('odrphonecus-error').style.display = 'none';
-            }
-
-            if (isValid) {
-                document.getElementById('backround-form-buttons').style.display = 'flex';
+                document.getElementById('oderaddress-error').style.display = 'none';
             }
         }
 

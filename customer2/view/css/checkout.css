@@ -947,6 +947,12 @@ body {
     display: none;
     margin-bottom: 10px;
 }
+
+textarea.input-id {
+    width: 100%;
+    height: 110px;
+    resize: vertical;
+}
 /*--Css Footer--*/
 .footer {
     background-color: black;
