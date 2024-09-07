@@ -44,9 +44,9 @@
                                     <div class="input2">
                                         <div class="password">
                                             <input id="passigin" class="input-password" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass" aria-invalid="false">
-                                            <span class="error-message" id="passigin-error"></span>
                                         </div>
                                     </div>
+                                    <span class="error-message" id="passigin-error" style="font-size: 13px; color: red;"></span>
                                     <!--<div class="reset-pass"><a class="reset" href="#">Quên mật khẩu</a></div>-->
                                     <button class="creat" type="submit" name="submit" disabled>Đăng nhập</button>
                                 </form>
@@ -101,21 +101,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const phoneInput = document.getElementById('phonesigupin');
     const passwordInput = document.getElementById('passigin');
     const loginButton = document.querySelector('.creat');
+    const passwordError = document.getElementById('passigin-error'); // Định nghĩa biến này
 
     function validatePhone(phone) {
         const phoneRegex = /^\d{10}$/; 
         return phoneRegex.test(phone);
     }
 
+    // Hàm kiểm tra xem các trường có hợp lệ không
     function validateInputs() {
         const isPhoneValid = validatePhone(phoneInput.value.trim());
-        const isPasswordValid = passwordInput.value.trim() !== '';
+        const isPasswordValid = validatePassword(passwordInput.value.trim());
 
+        // Kiểm tra mật khẩu
+        if (!isPasswordValid && passwordInput.value.trim() !== '') {
+            passwordError.textContent = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ cái viết hoa, chữ cái viết thường và số.";
+        } else {
+            passwordError.textContent = ""; // Xóa thông báo lỗi nếu mật khẩu hợp lệ
+        }
+
+        // Kích hoạt hoặc vô hiệu hóa nút đăng nhập
         loginButton.disabled = !(isPhoneValid && isPasswordValid);
     }
 
+    // Hàm kiểm tra mật khẩu
+    function validatePassword(password) {
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        return passwordRegex.test(password);
+    }
+    
+    // Thêm sự kiện lắng nghe cho các trường nhập liệu
     phoneInput.addEventListener('input', validateInputs);
     passwordInput.addEventListener('input', validateInputs);
 });
-
 </script>

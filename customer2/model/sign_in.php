@@ -15,7 +15,7 @@
             header("location:../controller/index.php");
         }else{
             echo "<script>
-            alert('Số điện thoại không hợp lên hoặc Mật khẩu sai!!');
+            alert('Số điện thoại không hợp lệ hoặc Mật khẩu sai!!');
             window.location.href = '../view/sign_in.php';
             </script>";
         }

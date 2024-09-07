@@ -35,14 +35,14 @@
             height: 100%;
             width: 100%;
             background-color: rgb(69, 74, 77);
-            background-image: url(../img/sign_in.jpg);
-            background-size: cover; /* Cover the entire viewport */
+            background-image: url(../view/img/sign_in.jpg);
+            background-size: cover;
             background-repeat: no-repeat;
-            background-position: center; /* Center the image */
+            background-position: center; 
         }
 
         .form-main {
-            background-image: url(../img/logo.png); 
+            background-image: url(../view/img/logo.png); 
             background-size: contain; 
             background-repeat: no-repeat; 
             background-position: left;
@@ -245,7 +245,7 @@
                                 <form action = "../model/sign_in.php" method="POST" >
                                     <div class="input">
                                         <div class="id-ac">
-                                            <input class="input-id" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone_number" aria-invalid="false">
+                                            <input id="phonesigupin" class="input-id" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone_number" aria-invalid="false">
                                         </div>
                                     </div>
                                     <div id="id-error" aria-live="polite"></div>
@@ -256,12 +256,12 @@
                                     </div>
                                     <div class="input2">
                                         <div class="password">
-                                            <input class="input-password" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass" aria-invalid="false">
+                                            <input id="passigin"  class="input-password" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass" aria-invalid="false">
                                         </div>
-                                        <div id="password-error" aria-live="polite"></div>
+                                        <span class="error-message" id="passigin-error" style="font-size: 13px; color: red;"></span>
                                     </div>
-                                    <div class="reset-pass"><a class="reset" href="#">Quên mật khẩu</a></div>
-                                    <button class="creat" type="submit" name="submit" >Đăng nhập</button>
+                                    <!--<div class="reset-pass"><a class="reset" href="#">Quên mật khẩu</a></div>-->
+                                    <button class="creat" type="submit" name="submit" disabled>Đăng nhập</button>
                                 </form>
                             </div>
                         </div>
@@ -272,3 +272,44 @@
     </main>
 </body>
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const phoneInput = document.getElementById('phonesigupin');
+    const passwordInput = document.getElementById('passigin');
+    const loginButton = document.querySelector('.creat');
+    const passwordError = document.getElementById('passigin-error'); // Định nghĩa biến này
+
+    function validatePhone(phone) {
+        const phoneRegex = /^\d{10}$/; 
+        return phoneRegex.test(phone);
+    }
+
+    // Hàm kiểm tra xem các trường có hợp lệ không
+    function validateInputs() {
+        const isPhoneValid = validatePhone(phoneInput.value.trim());
+        const isPasswordValid = validatePassword(passwordInput.value.trim());
+
+        // Kiểm tra mật khẩu
+        if (!isPasswordValid && passwordInput.value.trim() !== '') {
+            passwordError.textContent = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ cái viết hoa, chữ cái viết thường và số.";
+        } else {
+            passwordError.textContent = ""; // Xóa thông báo lỗi nếu mật khẩu hợp lệ
+        }
+
+        // Kích hoạt hoặc vô hiệu hóa nút đăng nhập
+        loginButton.disabled = !(isPhoneValid && isPasswordValid);
+    }
+
+    // Hàm kiểm tra mật khẩu
+    function validatePassword(password) {
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        return passwordRegex.test(password);
+    }
+    
+    // Thêm sự kiện lắng nghe cho các trường nhập liệu
+    phoneInput.addEventListener('input', validateInputs);
+    passwordInput.addEventListener('input', validateInputs);
+});
+</script>
+
