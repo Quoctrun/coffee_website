@@ -76,7 +76,7 @@
         <br>
         <div class="form-buttons">
             <button id="br" onclick="showAddProductFormYes()">Gửi</button>
-            <button type="button" name="cancel" onclick="hideElementById('addProductFr')">Hủy</button>
+            <button id="eixnowbt" type="button" name="cancel" onclick="hideElementById('addProductFr')">Hủy</button>
         </div>
 
         <div id="backround-form-buttons">

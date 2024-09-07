@@ -903,6 +903,13 @@ body {
     background-color: #c82333;
 }
 
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+    margin-bottom: 10px;
+}
+
 /*--Css Footer--*/
 .footer {
     background-color: black;

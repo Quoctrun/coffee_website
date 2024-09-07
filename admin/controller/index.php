@@ -106,4 +106,10 @@
                 subMenu.style.display = 'none';
             }
         });
+
+        document.querySelectorAll('#editaccount').forEach(link => {
+            link.addEventListener('click', function(event) {
+                sessionStorage.setItem('returnPage', window.location.href);
+            });
+        });
     </script>

@@ -317,3 +317,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.nav-index').classList.add('active');
     }
 });
+
+document.querySelectorAll('#editaccount').forEach(link => {
+    link.addEventListener('click', function(event) {
+        sessionStorage.setItem('returnPage', window.location.href);
+    });
+});
+

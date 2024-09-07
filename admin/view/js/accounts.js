@@ -87,6 +87,14 @@ document.getElementById('account-password').addEventListener('input', function()
 document.getElementById('accountRole').addEventListener('change', function() {
     document.getElementById('accountRole-error').style.display = 'none';
 });
+
+//Ẩn khi hủy
+document.getElementById('eixnowbt').addEventListener("click", function() {
+    document.getElementById('name-error').style.display = 'none';
+    document.getElementById('phone-error').style.display = 'none';
+    document.getElementById('password-error').style.display = 'none';
+    document.getElementById('accountRole-error').style.display = 'none';
+});
 // Add a new account
 // function addAccount() {
 //     const name = document.querySelector('.input-name').value;

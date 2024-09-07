@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="notification-container">
-        <botton id="back-button" class="back-button" onclick="location.href='../controller/index.php'">Trở về</botton>
+        <a href="#" id="back-button" class="back-button">Trở về</a>
             <hr style="margin-top: 10px; margin-bottom: 10px;">
             <h1 id="notification-title">Chỉnh sửa tài khoản</h1>
             <div style="display: flex; width: 100%; align-items: center; justify-content: center; padding-bottom: 5px;">
@@ -22,9 +22,11 @@
 
             <form class="contents" method = "POST">
                 <p>Tên tài khoản</p>
-                <input type="text" name="user_name" value="<?php echo $user_infor['user_name']; ?>" class="input-field">
+                <input type="text" id="account-name" name="user_name" value="<?php echo $user_infor['user_name']; ?>" class="input-field">
+                <span class="error-message" id="name-error"></span>
                 <p>Số điện thoại</p>
-                <input type="text" name="phone_number" value="<?php echo $user_infor['phone_number']; ?>" class="input-field">
+                <input type="text" id="account-phone" name="phone_number" value="<?php echo $user_infor['phone_number']; ?>" class="input-field">
+                <span class="error-message" id="phone-error"></span>
                 <hr style="margin-top: 10px;">
                 <div class="button-container">
                     <button id="edit-btn" onclick="showAddProductForm()">Edit</button>
@@ -45,8 +47,43 @@
     </main>
     <script>
         function showAddProductForm() {
-            document.getElementById('backround-form-buttons').style.display = 'flex';
+            let isValid = true;
+
+            // Lấy các giá trị từ các trường nhập liệu
+            const accountName = document.getElementById('account-name').value;
+            const accountPhone = document.getElementById('account-phone').value;
+
+            // Kiểm tra Tên tài khoản
+            if (!accountName) {
+                document.getElementById('name-error').innerText = "Vui lòng nhập tên tài khoản.";
+                document.getElementById('name-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('name-error').style.display = 'none';
+            }
+
+            // Kiểm tra Số điện thoại
+            if (!accountPhone) {
+                document.getElementById('phone-error').innerText = "Vui lòng nhập số điện thoại hợp lệ.";
+                document.getElementById('phone-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('phone-error').style.display = 'none';
+            }
+
+            // Nếu tất cả các trường đều hợp lệ thì hiển thị form xác nhận
+            if (isValid) {
+                document.getElementById('backround-form-buttons').style.display = 'flex';
+            }
         }
+
+        // Ẩn thông báo lỗi khi người dùng bắt đầu nhập liệu lại
+        document.getElementById('account-name').addEventListener('input', function() {
+            document.getElementById('name-error').style.display = 'none';
+        });
+        document.getElementById('account-phone').addEventListener('input', function() {
+            document.getElementById('phone-error').style.display = 'none';
+        });
 
         function hideAddProductForm() {
             document.getElementById('backround-form-buttons').style.display = 'none';
@@ -69,6 +106,17 @@
         document.getElementById("edit-btn").addEventListener("click", function(event) {
             event.preventDefault();
         })
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const backButton = document.getElementById('back-button');
+            const returnPage = sessionStorage.getItem('returnPage') || 'index.php';
+
+            backButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                window.location.href = returnPage;
+            });
+        });
+
     </script>
     <script type="text/javascript" src="../view/js/script.js"></script>
 </body>

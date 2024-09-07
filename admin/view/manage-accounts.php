@@ -61,8 +61,8 @@
                 </select>
                 <span class="error-message" id="accountRole-error"></span>
                 <div class="form-buttons">
-                    <button id="br" onclick="showAccountYes()">Thêm Tài Khoản</button> <!-- Đổi từ type="button" thành type="submit" -->
-                    <button type="button" name="cancel" onclick="hideAddAccountForm()">Hủy</button>
+                    <button id="br" onclick="showAccountYes()">Thêm Tài Khoản</button> 
+                    <button id="eixnowbt" type="button" name="cancel" onclick="hideAddAccountForm()">Hủy</button>
                 </div>
                 <div id="backround-form-buttons" style="display: none;">
                     <div class="form-yes" style="width: 30%; height: 30%;">
