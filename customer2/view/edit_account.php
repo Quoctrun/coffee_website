@@ -1,5 +1,5 @@
 <?php include "../model/customer_infor.php" ?>
-<?php include "../model/edit_account.php" ?>
+
 
 <link rel="stylesheet" type="text/css" href="../view/css/styleEditAccount.css">
     <!--main section-->
@@ -20,7 +20,7 @@
                 <div class="line-tt-pg"></div>
             </div>
 
-            <form class="contents" method = "POST">
+            <form class="contents" method = "POST" action="../model/edit_account.php">
                 <p>Tên tài khoản</p>
                 <input type="text" name="user_name" value="<?php echo $user_infor['user_name']; ?>" class="input-field">
                 <p>Số điện thoại</p>

@@ -27,8 +27,8 @@
 
                     if (mysqli_query($conn, $sql_update)) {
                         echo "Mật khẩu đã được thay đổi thành công.";
-                        // // header("Location: ../controller/index.php?act=edit_account");
-                        // exit();
+                        header("Location: ../controller/index.php?act=edit_account");
+                        exit();
                     } else {
                         echo "Có lỗi xảy ra khi thay đổi mật khẩu.";
                     }
