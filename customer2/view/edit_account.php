@@ -49,12 +49,9 @@
     <script>
         function showAddProductForm() {
             let isValid = true;
-
-            // Lấy các giá trị từ các trường nhập liệu
             const accountName = document.getElementById('account-name').value;
             const accountPhone = document.getElementById('account-phone').value;
 
-            // Kiểm tra Tên tài khoản
             if (!accountName) {
                 document.getElementById('name-error').innerText = "Vui lòng nhập tên tài khoản.";
                 document.getElementById('name-error').style.display = 'block';
@@ -63,22 +60,28 @@
                 document.getElementById('name-error').style.display = 'none';
             }
 
-            // Kiểm tra Số điện thoại
             if (!accountPhone) {
                 document.getElementById('phone-error').innerText = "Vui lòng nhập số điện thoại hợp lệ.";
+                document.getElementById('phone-error').style.display = 'block';
+                isValid = false;
+            } else if (!validatePhoneNumber(accountPhone)) {
+                document.getElementById('phone-error').innerText = "Số điện thoại phải có đúng 10 chữ số.";
                 document.getElementById('phone-error').style.display = 'block';
                 isValid = false;
             } else {
                 document.getElementById('phone-error').style.display = 'none';
             }
 
-            // Nếu tất cả các trường đều hợp lệ thì hiển thị form xác nhận
             if (isValid) {
                 document.getElementById('backround-form-buttons').style.display = 'flex';
             }
         }
 
-        // Ẩn thông báo lỗi khi người dùng bắt đầu nhập liệu lại
+        function validatePhoneNumber(phoneNumber) {
+            const regex = /^\d{10}$/;
+            return regex.test(phoneNumber);
+        }
+
         document.getElementById('account-name').addEventListener('input', function() {
             document.getElementById('name-error').style.display = 'none';
         });

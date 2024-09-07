@@ -11,7 +11,7 @@
 <body>
     <header class="header">
         <div class="navbar-index">
-            <a href="index.php"><img src="img/logo.png" class="logo" alt="Logo Caffe Monster"></a>
+            <a href="../controller/index.php"><img src="img/logo.png" class="logo" alt="Logo Caffe Monster"></a>
             <h1 id="Title">Đăng nhập</h1>
         </div>
         <p id="help">Hotline: 0354464053</p>
@@ -32,10 +32,10 @@
                                 <form action = "../model/sign_in.php" method="POST" >
                                     <div class="input">
                                         <div class="id-ac">
-                                            <input class="input-id" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone_number" aria-invalid="false">
+                                            <input id="phonesigupin" class="input-id" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone_number" aria-invalid="false">
+                                            <span class="error-message" id="phonesigupin-error"></span>
                                         </div>
                                     </div>
-                                    <div id="id-error" aria-live="polite"></div>
                                     <div class="line-or">
                                         <div class="p__MPF"></div>
                                         <span class="MPD">###</span>
@@ -43,12 +43,12 @@
                                     </div>
                                     <div class="input2">
                                         <div class="password">
-                                            <input class="input-password" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass" aria-invalid="false">
+                                            <input id="passigin" class="input-password" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass" aria-invalid="false">
+                                            <span class="error-message" id="passigin-error"></span>
                                         </div>
-                                        <div id="password-error" aria-live="polite"></div>
                                     </div>
-                                    <div class="reset-pass"><a class="reset" href="#">Quên mật khẩu</a></div>
-                                    <button class="creat" type="submit" name="submit" >Đăng nhập</button>
+                                    <!--<div class="reset-pass"><a class="reset" href="#">Quên mật khẩu</a></div>-->
+                                    <button class="creat" type="submit" name="submit" disabled>Đăng nhập</button>
                                 </form>
                             </div>
                             <div class="footer-form">
@@ -96,3 +96,26 @@
     </footer>
 </body>
 </html>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const phoneInput = document.getElementById('phonesigupin');
+    const passwordInput = document.getElementById('passigin');
+    const loginButton = document.querySelector('.creat');
+
+    function validatePhone(phone) {
+        const phoneRegex = /^\d{10}$/; 
+        return phoneRegex.test(phone);
+    }
+
+    function validateInputs() {
+        const isPhoneValid = validatePhone(phoneInput.value.trim());
+        const isPasswordValid = passwordInput.value.trim() !== '';
+
+        loginButton.disabled = !(isPhoneValid && isPasswordValid);
+    }
+
+    phoneInput.addEventListener('input', validateInputs);
+    passwordInput.addEventListener('input', validateInputs);
+});
+
+</script>

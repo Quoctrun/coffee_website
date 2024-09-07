@@ -14,7 +14,10 @@
             $_SESSION['mySession'] = $user['user_id'];
             header("location:../controller/index.php");
         }else{
-            echo "Incorrect account name or password!";
+            echo "<script>
+            alert('Số điện thoại không hợp lên hoặc Mật khẩu sai!!');
+            window.location.href = '../view/sign_in.php';
+            </script>";
         }
     }
 ?>

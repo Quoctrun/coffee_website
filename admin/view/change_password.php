@@ -48,65 +48,74 @@
         </div>
     </main>
     <script>
-        function hideAddProductForm() {
-            document.getElementById('backround-form-buttons').style.display = 'none';
-        }
+    function showAddProductForm() {
+        let isValid = true;
 
-        function showAddProductForm() {
-            let isValid = true;
+        // Lấy các giá trị từ các trường nhập liệu
+        const passwordOld = document.getElementById('pswrd_old').value;
+        const passwordNew1 = document.getElementById('pswd_new1').value;
+        const passwordNew2 = document.getElementById('pswd_new2').value;
 
-            // Lấy các giá trị từ các trường nhập liệu
-            const passwordOld = document.getElementById('pswrd_old').value;
-            const passwordNew1 = document.getElementById('pswd_new1').value;
-            const passwordNew2 = document.getElementById('pswd_new2').value;
-
-            // Kiểm tra mật khẩu cũ
-            if (!passwordOld) {
-                document.getElementById('pswrd_old-error').innerText = "Vui lòng nhập mật khẩu cũ.";
-                document.getElementById('pswrd_old-error').style.display = 'block';
-                isValid = false;
-            } else {
-                document.getElementById('pswrd_old-error').style.display = 'none';
-            }
-
-            // Kiểm tra mật khẩu mới
-            if (!passwordNew1) {
-                document.getElementById('pswd_new1-error').innerText = "Vui lòng nhập mật khẩu mới.";
-                document.getElementById('pswd_new1-error').style.display = 'block';
-                isValid = false;
-            } else {
-                document.getElementById('pswd_new1-error').style.display = 'none';
-            }
-
-            // Kiểm tra mật khẩu nhập lại
-            if (!passwordNew2) {
-                document.getElementById('pswd_new2-error').innerText = "Vui lòng nhập lại mật khẩu mới.";
-                document.getElementById('pswd_new2-error').style.display = 'block';
-                isValid = false;
-            } else if (passwordNew1 !== passwordNew2) {
-                document.getElementById('pswd_new2-error').innerText = "Mật khẩu nhập lại không khớp.";
-                document.getElementById('pswd_new2-error').style.display = 'block';
-                isValid = false;
-            } else {
-                document.getElementById('pswd_new2-error').style.display = 'none';
-            }
-
-            // Nếu hợp lệ, hiển thị form xác nhận
-            if (isValid) {
-                document.getElementById('backround-form-buttons').style.display = 'flex';
-            }
-        }
-
-        // Ẩn thông báo lỗi khi người dùng bắt đầu nhập liệu lại
-        document.getElementById('pswrd_old').addEventListener('input', function() {
+        // Kiểm tra mật khẩu cũ
+        if (!passwordOld) {
+            document.getElementById('pswrd_old-error').innerText = "Vui lòng nhập mật khẩu cũ.";
+            document.getElementById('pswrd_old-error').style.display = 'block';
+            isValid = false;
+        } else if (!validatePassword(passwordOld)) {
+            document.getElementById('pswrd_old-error').innerText = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ cái viết hoa, chữ cái viết thường và số.";
+            document.getElementById('pswrd_old-error').style.display = 'block';
+            isValid = false;
+        } else {
             document.getElementById('pswrd_old-error').style.display = 'none';
-        });
-        document.getElementById('pswd_new1').addEventListener('input', function() {
+        }
+
+        // Kiểm tra mật khẩu mới
+        if (!passwordNew1) {
+            document.getElementById('pswd_new1-error').innerText = "Vui lòng nhập mật khẩu mới.";
+            document.getElementById('pswd_new1-error').style.display = 'block';
+            isValid = false;
+        } else if (!validatePassword(passwordNew1)) {
+            document.getElementById('pswd_new1-error').innerText = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ cái viết hoa, chữ cái viết thường và số.";
+            document.getElementById('pswd_new1-error').style.display = 'block';
+            isValid = false;
+        } else {
             document.getElementById('pswd_new1-error').style.display = 'none';
-        });
-        document.getElementById('pswd_new2').addEventListener('input', function() {
+        }
+
+        // Kiểm tra mật khẩu nhập lại
+        if (!passwordNew2) {
+            document.getElementById('pswd_new2-error').innerText = "Vui lòng nhập lại mật khẩu mới.";
+            document.getElementById('pswd_new2-error').style.display = 'block';
+            isValid = false;
+        } else if (passwordNew1 !== passwordNew2) {
+            document.getElementById('pswd_new2-error').innerText = "Mật khẩu nhập lại không khớp.";
+            document.getElementById('pswd_new2-error').style.display = 'block';
+            isValid = false;
+        } else {
             document.getElementById('pswd_new2-error').style.display = 'none';
-        });
+        }
+
+        // Nếu hợp lệ, hiển thị form xác nhận
+        if (isValid) {
+            document.getElementById('backround-form-buttons').style.display = 'flex';
+        }
+    }
+
+    function validatePassword(password) {
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        return regex.test(password);
+    }
+
+    // Ẩn thông báo lỗi khi người dùng bắt đầu nhập liệu lại
+    document.getElementById('pswrd_old').addEventListener('input', function() {
+        document.getElementById('pswrd_old-error').style.display = 'none';
+    });
+    document.getElementById('pswd_new1').addEventListener('input', function() {
+        document.getElementById('pswd_new1-error').style.display = 'none';
+    });
+    document.getElementById('pswd_new2').addEventListener('input', function() {
+        document.getElementById('pswd_new2-error').style.display = 'none';
+    });
 
         const dateSendElement = document.getElementById('date-send');
         if (dateSendElement) {

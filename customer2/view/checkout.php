@@ -137,14 +137,18 @@
         function showAddProductForm() {
             let isValid = true;
 
-            const passwordOld = document.getElementById('oderaddress').value;
+            const address = document.getElementById('oderaddress').value;
 
-            if (!passwordOld) {
+            if (!address) {
                 document.getElementById('oderaddress-error').innerText = "Vui lòng nhập địa chỉ giao hàng.";
                 document.getElementById('oderaddress-error').style.display = 'block';
                 isValid = false;
             } else {
                 document.getElementById('oderaddress-error').style.display = 'none';
+            }
+            // Nếu hợp lệ, hiển thị form xác nhận
+            if (isValid) {
+                document.getElementById('backround-form-buttons').style.display = 'flex';
             }
         }
 

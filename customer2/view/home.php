@@ -98,21 +98,21 @@
                                     <i class='bx bxs-book-content' ></i>
                                     <h1>NHẬN XÉT PHẢN HỒI</h1>
                                 </div>
-                                <form class="from-contain">
+                                <form class="from-contain" style="opacity: 0.5;">
                                     <div class="input-name-ct">
                                         <p class="name-ipct">Tên:</p>
-                                        <input class="input-id" type="text" placeholder="Nhập tên" autocomplete="tel" name="id" aria-invalid="false">
+                                        <input class="input-id" type="text" placeholder="Nhập tên" autocomplete="tel" name="id" aria-invalid="false" disabled>
                                     </div>
                                     <div class="ip-ct-dr">
                                         <p class="tt-ipct-dr">Địa chỉ liên lạc:</p>
-                                        <input class="input-id" type="text" placeholder="Nhập email/ Số điện thoại" autocomplete="tel" name="id" aria-invalid="false">
+                                        <input class="input-id" type="text" placeholder="Nhập email/ Số điện thoại" autocomplete="tel" name="id" aria-invalid="false" disabled>
                                     </div>
                                     <div class="ip-notes-ct">
                                         <p class="tt-ct-notes">Ý kiến phản hồi:</p>
-                                        <textarea class="input-id" id="notes" placeholder="Nhập ý kiến" autocomplete="tel" name="id" aria-invalid="false"></textarea> 
+                                        <textarea class="input-id" id="notes" placeholder="Nhập ý kiến" autocomplete="tel" name="id" aria-invalid="false" disabled></textarea> 
                                     </div>
                                     <hr>
-                                    <button class="creat" type="submit">Gửi</button>
+                                    <button class="creat" type="submit" disabled>Gửi</button>
                                 </form>
                             </div>
                             <div class="image-ct">

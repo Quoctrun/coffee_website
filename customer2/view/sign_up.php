@@ -13,7 +13,7 @@
 <body>
     <header class="header">
         <div class="navbar-index">
-            <a href="index.php"><img src="img/logo.png" class="logo" alt="Logo Caffe Monster"></a>
+            <a href="../controller/index.php"><img src="img/logo.png" class="logo" alt="Logo Caffe Monster"></a>
             <h1 id="Title">Đăng ký</h1>
         </div>
         <p id="help">Hotline: 0354464053</p>
@@ -34,11 +34,12 @@
                             <form method="POST">
                                 <div class="input">
                                     <div class="phone-number">
-                                        <input class="input-phone" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone_number" required>
+                                        <input id="phonesigupin" class="input-phone" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone_number" required>
+                                        <span class="error-message" id="phonesigupin-error"></span>
                                     </div>
                                 </div>
                                 <div id="phone-error" aria-live="polite"></div>
-                                <button class="creat" type="submit" name="submit">Tiếp theo</button>
+                                <button class="creat" type="submit" name="submit" disabled>Tiếp theo</button>
                             </form>
                             </div>
                             
@@ -47,13 +48,6 @@
                             </div>
                         </div>
                     </div>
-                    <script>
-                        // Kiểm tra nếu có lỗi từ biến PHP và hiển thị lỗi
-                        var errorMessage = "<?php echo $error_message; ?>";
-                        if (errorMessage) {
-                            document.getElementById("phone-error").innerText = errorMessage;
-                        }
-                    </script>
                 </div>
             </div>
         </div>
@@ -94,3 +88,21 @@
     </footer>
 </body>
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const phoneInput = document.getElementById('phonesigupin');
+    const signUpButton = document.querySelector('.creat');
+
+    // Hàm kiểm tra xem số điện thoại có đúng 10 ký tự và là số
+    function validatePhoneInput() {
+        const phoneValue = phoneInput.value.trim();
+        const isPhoneValid = /^\d{10}$/.test(phoneValue); // Kiểm tra 10 ký tự số
+        signUpButton.disabled = !isPhoneValid; // Kích hoạt nút nếu nhập số hợp lệ
+    }
+
+    // Thêm sự kiện lắng nghe cho trường nhập liệu số điện thoại
+    phoneInput.addEventListener('input', validatePhoneInput);
+});
+
+</script>

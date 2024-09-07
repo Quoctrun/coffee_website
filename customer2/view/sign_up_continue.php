@@ -12,7 +12,7 @@
 <body>
     <header class="header">
         <div class="navbar-index">
-            <a href="index.php"><img src="img/logo.png" class="logo" alt="Logo Caffe Monster"></a>
+            <a href="../controller/index.php"><img src="img/logo.png" class="logo" alt="Logo Caffe Monster"></a>
             <h1 id="Title">Đăng ký</h1>
         </div>
         <p id="help">Hotline: 0354464053</p>
@@ -34,15 +34,16 @@
                                 <input type="hidden" name="phone_number" value="<?php echo htmlspecialchars($_POST['phone_number']); ?>">
                                 <div class="input">
                                     <div class="name-ac">
-                                        <input class="input-name" type="text" placeholder="Tên tài khoản" name="user_name" required>
+                                        <input id="nmecusacc" class="input-name" type="text" placeholder="Họ và tên" name="user_name" required>
                                     </div>
                                 </div>
                                 <div class="input2">
                                     <div class="password">
-                                        <input class="input-password" type="password" placeholder="Mật khẩu" name="user_pass" required>
+                                        <input id="passigin" class="input-password" type="password" placeholder="Mật khẩu" name="user_pass" required>
                                     </div>
                                 </div>
-                                <button class="creat" type="submit" name="validate">Xác nhận</button>
+                                <span class="error-message" id="passigin-error" style="font-size: 13px; color: red;"></span>
+                                <button class="creat" type="submit" name="validate" >Xác nhận</button>
                             </form>
                             </div>
                             <div class="footer-form">
@@ -90,3 +91,53 @@
     </footer>
 </body>
 </html>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const nameInput = document.getElementById('nmecusacc');
+        const passwordInput = document.getElementById('passigin');
+        const loginButton = document.querySelector('.creat');
+
+        // Hàm kiểm tra xem các trường có hợp lệ không
+        function validateInputs() {
+            const isPhoneValid = nameInput.value.trim() !== '';
+            const isPasswordValid = passwordInput.value.trim() !== '';
+            loginButton.disabled = !(isPhoneValid && isPasswordValid);
+        }
+
+        // Thêm sự kiện lắng nghe cho các trường nhập liệu
+        nameInput.addEventListener('input', validateInputs);
+        passwordInput.addEventListener('input', validateInputs);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const nameInput = document.getElementById('nmecusacc');
+    const passwordInput = document.getElementById('passigin');
+    const passwordError = document.getElementById('passigin-error'); // Lấy phần tử để hiển thị lỗi
+    const loginButton = document.querySelector('.creat');
+
+    // Hàm kiểm tra xem các trường có hợp lệ không
+    function validateInputs() {
+        const isNameValid = nameInput.value.trim() !== '';
+        const isPasswordValid = validatePassword(passwordInput.value.trim());
+
+        if (!isPasswordValid && passwordInput.value.trim() !== '') {
+            passwordError.textContent = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ cái viết hoa, chữ cái viết thường và số.";
+        } else {
+            passwordError.textContent = ""; // Xóa thông báo lỗi nếu mật khẩu hợp lệ
+        }
+
+        loginButton.disabled = !(isNameValid && isPasswordValid);
+    }
+
+    // Hàm kiểm tra mật khẩu
+    function validatePassword(password) {
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        return passwordRegex.test(password);
+    }
+
+    // Thêm sự kiện lắng nghe cho các trường nhập liệu
+    nameInput.addEventListener('input', validateInputs);
+    passwordInput.addEventListener('input', validateInputs);
+});
+
+</script>
