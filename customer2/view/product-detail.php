@@ -6,7 +6,8 @@
                     <img src="../view/img/product/<?php echo $product['img']; ?>" alt="<?php echo $product['product_name']; ?>">
                 </div>
                 <div class="product-details">
-                    <h2 class="product-title">Tên sản phẩm: <?php echo $product['product_name']; ?></h2>
+                    <h2>Tên sản phẩm: </h2>
+                    <h2 class="product-title"><?php echo $product['product_name']; ?></h2>
                     <p class="product-code">Mã sản phẩm: <?php echo $product['product_id']; ?></p>
                     <h3 class="price">Giá: <?php echo $product['price']; ?><u>đ</u></h3>
                     <div class="quantity-container">

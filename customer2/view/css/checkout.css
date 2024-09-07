@@ -883,6 +883,70 @@ body {
 .inf-cus-order input[type="text"] {
     margin-bottom: 10px;
 }
+
+#backround-form-buttons, #notification-popup {
+    display: none;
+    flex-direction: column;
+    opacity: 1;
+    pointer-events: all;
+    z-index: 1000;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.25s ease-in-out;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-edit, .form-yes, .notification-content{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 50%;
+}
+
+.button-ex, #ok-button, #cancel-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 48%;
+    margin-right: 2%;
+    transition: background-color 0.3s ease;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-ex, #cancel-btn {
+    background-color: #dc3545;
+    margin-right: 0;
+}
+
+#ok-button:hover {
+    background-color: #218838;
+}
+
+#cancel-btn:hover, .button-ex:hover {
+    background-color: #c82333;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+    margin-bottom: 10px;
+}
 /*--Css Footer--*/
 .footer {
     background-color: black;

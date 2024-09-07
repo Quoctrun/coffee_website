@@ -5,7 +5,6 @@
         <div class="page-heading">
             <div class="container">
                 <ul class="breadcrumb">
-                    <li><a href="index.php?act=product">Sản phẩm</a></li> /
                     <li>Giỏ hàng</li> /
                     <li id="page-active">Đơn hàng</li>
                 </ul>
@@ -27,8 +26,10 @@
             <div class="inf-cus-order">
                 <b>Thông tin người nhận hàng:*</b>
                 <div class="detail-inf-cus-order">
-                    <input class="input-name" type="text" placeholder="Tên người nhận" autocomplete="tel" name="name" aria-invalid="false" value="<?php echo $result['user_name']; ?>">
-                    <input class="input-phone" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone" aria-invalid="false" value="<?php echo $result['phone_number']; ?>">
+                    <input id="odrnamecus" class="input-name" type="text" placeholder="Tên người nhận" autocomplete="tel" name="name" aria-invalid="false" value="<?php echo $result['user_name']; ?>">
+                    <span class="error-message" id="odrnamecus-error"></span>
+                    <input id="odrphonecus" class="input-phone" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone" aria-invalid="false" value="<?php echo $result['phone_number']; ?>">
+                    <span class="error-message" id="odrphonecus-error"></span>
                 </div>
             </div>
             <div class="delivery-method">
@@ -37,7 +38,7 @@
                         <b>Phương thức giao hàng:*</b>
                     </legend>
                     <div>
-                        <input type="radio" id="standard" name="delivery" value="standard">
+                        <input type="radio" id="standard" name="delivery" value="standard" checked>
                         <label for="standard">Đến nhận tại cửa hàng</label>
                     </div>
                     <div>
@@ -52,7 +53,7 @@
                         <b>Phương thức thanh toán:*</b>
                     </legend>
                     <div>
-                        <input type="radio" id="standard-pm" name="payment" value="standard-pm">
+                        <input type="radio" id="standard-pm" name="payment" value="standard-pm" checked>
                         <label for="standard-pm">Thanh toán trực tiếp</label>
                     </div>
                     <div>
@@ -78,7 +79,17 @@
             <input type="hidden" id="cart_data" name="cart_data">
             <input type="hidden" id="total_amount" name="total_amount">
             <input type="hidden" id="order_date" name="order_date">
-            <button id="ok-button" class="yes-button" name="btn">Đặt hàng</button>
+            <button id="confirm-btn-yes" class="yes-button" onclick="showAddProductForm()">Đặt hàng</button>
+
+            <div id="backround-form-buttons" class="confirmation-box">
+                <div class="form-yes" style="height: 200px; width: 400px;">
+                    <h2 style="height: 120px;">Bạn có chắc chắn Đặt hàng không.</h2>
+                    <div class="form-buttons">
+                        <button id="ok-button" name="btn" type="submit">Xác nhận</button>
+                        <button id="cancel-btn" type="button" name="cancel" onclick="hideAddProductForm()">Hủy</button>
+                    </div>
+                </div>
+            </div>
         </form>
 
     </main>
@@ -125,6 +136,41 @@
             const seconds = String(date.getSeconds()).padStart(2, '0');
             return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
         }
+
+        function showAddProductForm() {
+            let isValid = true;
+
+            const passwordOld = document.getElementById('odrnamecus').value;
+            const passwordNew1 = document.getElementById('odrphonecus').value;
+
+            if (!passwordOld) {
+                document.getElementById('odrnamecus-error').innerText = "Vui lòng nhập tên người đặt.";
+                document.getElementById('odrnamecus-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('odrnamecus-error').style.display = 'none';
+            }
+
+            if (!passwordNew1) {
+                document.getElementById('odrphonecus-error').innerText = "Vui lòng nhập số điện thoại người đặt.";
+                document.getElementById('odrphonecus-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('odrphonecus-error').style.display = 'none';
+            }
+
+            if (isValid) {
+                document.getElementById('backround-form-buttons').style.display = 'flex';
+            }
+        }
+
+        function hideAddProductForm() {
+            document.getElementById('backround-form-buttons').style.display = 'none';
+        }
+
+        document.getElementById("confirm-btn-yes").addEventListener("click", function(event) {
+            event.preventDefault();
+        })
     </script>
 
     

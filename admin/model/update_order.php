@@ -44,7 +44,7 @@ echo "<p><strong>Phương thức thanh toán:</strong> " . "Thanh toán khi nh�
 
 <div id="notification-popup">
     <div class="notification-content" style="width: 30%; height: 30%;">
-        <h2 id="notification-message" style="justify-content: center; display: flex; height: 55%;">Bạn có chắc chắn Xác nhận sửa đổi không.</h2>
+        <h2 id="notification-message" style="justify-content: center; display: flex; height: 55%;"></h2>
         <div class="form-buttons" style="width: 100%; align-items: center; flex-direction: column;">
             <button class="button-ex" onclick="closeNotification()">Đóng</button>
         </div>
