@@ -1,9 +1,12 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if(!isset($_SESSION['mySession'])){
         header('location: ../view/sign_in.php');
     }
 ?>
+
 <link rel="stylesheet" href="../view/css/notifications.css">
 
     <main>  
