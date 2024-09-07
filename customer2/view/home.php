@@ -31,7 +31,7 @@
                 <ul class="row search-result-items">
                     <?php foreach ($products as $product): ?>
                         <li class="product-item" data-category="caffee">
-                            <a href="index.php?act=product-detail&id=<?php echo $product['product_id']; ?>" class="tag-product" style="text-decoration: none;">
+                            <a href="index.php?act=product-detail&this_id=<?php echo $product['product_id']; ?>" class="tag-product" style="text-decoration: none;">
                                 <img src="../view/img/<?php echo htmlspecialchars($product['img']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>">
                                 <h2><?php echo htmlspecialchars($product['product_name']); ?></h2>
                                 <h3 class="price"><?php echo $product['price']; ?><u>đ</u></h3> 
