@@ -23,14 +23,21 @@
                 <b style="margin-left: 5px;">Sản phẩm đặt mua:</b>
                 <div class="detail-products"></div>
             </div>
+            <div class="inf-cus-order">
+                <b>Thông tin người nhận hàng:*</b>
+                <div class="detail-inf-cus-order">
+                    <input class="input-name" type="text" placeholder="Tên người nhận" autocomplete="tel" name="name" aria-invalid="false" value="<?php echo $result['user_name']; ?>">
+                    <input class="input-phone" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone" aria-invalid="false" value="<?php echo $result['phone_number']; ?>">
+                </div>
+            </div>
             <div class="delivery-method">
                 <fieldset style="padding: 10px 20px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px;">
                     <legend style="margin: 0 20px;">
                         <b>Phương thức giao hàng:*</b>
                     </legend>
                     <div>
-                        <input type="radio" id="express" name="delivery" value="express" checked>
-                        <label for="express" style="color:#a5a2a2;">Giao hàng tận nơi</label>
+                        <input type="radio" id="standard" name="delivery" value="standard" checked>
+                        <label for="standard" style="color:#a5a2a2;">Giao hàng tận nơi</label>
                     </div>
                 </fieldset>
             </div>

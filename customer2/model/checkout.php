@@ -1,3 +1,11 @@
+<?php
+include "connect.php";
+
+if(!isset($_SESSION['mySession'])){
+    header('location: ../view/sign_in.php');
+}
+?>
+
 <div id="notification-popup">
     <div class="notification-content" style="width: 30%; height: 20%;">
         <h2 id="notification-message" style="justify-content: center; display: flex; height: 55%;"></h2>
@@ -21,14 +29,9 @@
 <?php
 include "connect.php";
 
-if(!isset($_SESSION['mySession'])){
-    header('location: ../view/sign_in.php');
-}
-else{
     $user_id = $_SESSION['mySession'];
     $sql = "SELECT * FROM `user` WHERE user_id = '$user_id'";
     $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-}
 
 if (isset($_POST["btn"])) {
     $cartData = json_decode($_POST['cart_data'], true);
