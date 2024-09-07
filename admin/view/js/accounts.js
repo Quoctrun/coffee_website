@@ -22,6 +22,10 @@ function hideAccountYes() {
     document.getElementById('backround-form-buttons').style.display = 'none';
 }
 
+function hideAccountYes() {
+    document.getElementById('backround-form-buttons').style.display = 'none';
+}
+
 // Hàm hiển thị form xác nhận sau khi kiểm tra dữ liệu
 function showAccountYes() {
     let isValid = true;
@@ -42,7 +46,7 @@ function showAccountYes() {
     }
 
     // Kiểm tra Số điện thoại
-    if (!accountPhone) {
+    if (!accountPhone || !validatePhone(accountPhone)) {
         document.getElementById('phone-error').innerText = "Vui lòng nhập số điện thoại hợp lệ.";
         document.getElementById('phone-error').style.display = 'block';
         isValid = false;
@@ -51,8 +55,8 @@ function showAccountYes() {
     }
 
     // Kiểm tra Mật khẩu
-    if (!accountPassword) {
-        document.getElementById('password-error').innerText = "Vui lòng nhập mật khẩu.";
+    if (!accountPassword || !validatePassword(accountPassword)) {
+        document.getElementById('password-error').innerText = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ cái viết hoa, chữ cái viết thường và số.";
         document.getElementById('password-error').style.display = 'block';
         isValid = false;
     } else {
@@ -74,6 +78,18 @@ function showAccountYes() {
     }
 }
 
+// Hàm kiểm tra số điện thoại
+function validatePhone(phone) {
+    const phoneRegex = /^\d{10}$/; // Kiểm tra xem tất cả các ký tự có phải là chữ số không
+    return phoneRegex.test(phone);
+}
+
+// Hàm kiểm tra mật khẩu
+function validatePassword(password) {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/; // Kiểm tra điều kiện mật khẩu
+    return passwordRegex.test(password);
+}
+
 // Ẩn thông báo lỗi khi người dùng bắt đầu nhập liệu lại
 document.getElementById('account-name').addEventListener('input', function() {
     document.getElementById('name-error').style.display = 'none';
@@ -88,13 +104,14 @@ document.getElementById('accountRole').addEventListener('change', function() {
     document.getElementById('accountRole-error').style.display = 'none';
 });
 
-//Ẩn khi hủy
+// Ẩn khi hủy
 document.getElementById('eixnowbt').addEventListener("click", function() {
     document.getElementById('name-error').style.display = 'none';
     document.getElementById('phone-error').style.display = 'none';
     document.getElementById('password-error').style.display = 'none';
     document.getElementById('accountRole-error').style.display = 'none';
 });
+
 // Add a new account
 // function addAccount() {
 //     const name = document.querySelector('.input-name').value;

@@ -18,11 +18,15 @@
         if (mysqli_query($conn, $sql)) {
             // Di chuyển file ảnh đã tải lên vào thư mục "img/product/"
             move_uploaded_file($image_tmp_name, '../view/img/product/' . $image);
-            header("Location: index.php?act=manage-products");
+            echo "<script>
+                alert('Cập nhập thành công!!');
+                window.location.href = '../controller/index.php?act=manage-products';
+                </script>";
             exit();
-            echo "Thêm sản phẩm thành công!";
         } else {
-            echo "Lỗi: " . mysqli_error($conn);
+            echo "<script>
+            alert('Lỗi: " . mysqli_error($conn) . "');
+            </script>";
         }
     }
     $qantity_of_product = count(getProducts());

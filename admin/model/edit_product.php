@@ -20,7 +20,10 @@
             if($row['img'] != $img){
                 move_uploaded_file($img_tmp_name, '../view/img/product/'.$img);
             }
-            header('location: index.php?act=manage-products');
+            echo "<script>
+                alert('Cập nhập thành công!!');
+                window.location.href = '../controller/index.php?act=manage-products';
+            </script>";
         }
         else{
             echo "sai";

@@ -4,7 +4,10 @@
     
     if (isset($_GET['this_id'])) {
         showProduct($_GET['this_id']);
-        header('location: ../controller/index.php?act=manage-products');
+        echo "<script>
+            alert('Cập nhập thành công!!');
+            window.location.href = '../controller/index.php?act=manage-products';
+        </script>";
     }
     
 ?>

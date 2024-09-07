@@ -13,11 +13,15 @@
 
         // Thực hiện truy vấn
         if (mysqli_query($conn, $sql)) {
-            header("Location: index.php?act=manage-accounts");
+            echo "<script>
+                alert('Cập nhập thành công!!');
+                window.location.href = '../controller/index.php?act=manage-accounts';
+            </script>";
             exit();
-            echo "Thêm sản phẩm thành công!";
         } else {
-            echo "Lỗi: " . mysqli_error($conn);
+            echo "<script>
+            alert('Lỗi: " . mysqli_error($conn) . "');
+            </script>";
         }
     }
 ?>
