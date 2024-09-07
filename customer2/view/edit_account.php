@@ -1,4 +1,5 @@
-<?php include "../model/customer_infor.php" ?>
+<?php include "../model/customer_infor.php"; ?>
+<?php include "../model/edit_account.php"; ?>
 
 
 <link rel="stylesheet" type="text/css" href="../view/css/styleEditAccount.css">
@@ -20,7 +21,7 @@
                 <div class="line-tt-pg"></div>
             </div>
 
-            <form class="contents" method = "POST" action="../model/edit_account.php">
+            <form class="contents" method = "POST">
                 <p>Tên tài khoản</p>
                 <input type="text" id="account-name" name="user_name" value="<?php echo $user_infor['user_name']; ?>" class="input-field">
                 <span class="error-message" id="name-error"></span>

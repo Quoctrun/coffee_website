@@ -1,3 +1,5 @@
+<?php include "../model/change_password.php" ?>
+
 <link rel="stylesheet" type="text/css" href="../view/css/styleChangePassword.css">
     <!--main section-->
     <main class="main">
@@ -17,7 +19,7 @@
                 <div class="line-tt-pg"></div>
             </div>
 
-            <form class="contents" method = "POST" action="../model/change_password.php">
+            <form class="contents" method = "POST">
                 <p>Nhập mật khẩu cũ</p>
                 <input id="pswrd_old" class="input-field" type="password" placeholder="Mật khẩu" autocomplete="tel" name="user_pass_old" aria-invalid="false">
                 <span class="error-message" id="pswrd_old-error"></span>
