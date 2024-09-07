@@ -3,6 +3,14 @@
 <link rel="stylesheet" type="text/css" href="../view/css/purchase_history.css">
     <!--main section-->
     <main class="main">
+        <div style="margin: 20px; padding: 20px; padding: 10px; background-color: wheat; border-radius: 20px;">
+            <form class="search-container" method="POST" action="">
+                <input type="search" name="search_order_id" class="search-input" placeholder="Tìm theo Order ID..." aria-label="Search by Order ID"> 
+                <button type="submit" name="search_id_btn" class="search-button" aria-label="Search Button"><i class='bx bx-search'></i></button> 
+                <input type="search" name="search_phone" class="search-input" placeholder="Tìm theo SĐT khách hàng..." aria-label="Search by Phone Number">
+                <button type="submit" name="search_phone_btn" class="search-button" aria-label="Search Button"><i class='bx bx-search'></i></button>
+            </form>
+        </div>
         <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             <h2>Danh sách đơn hàng đang xử lý</h2>
             <table>

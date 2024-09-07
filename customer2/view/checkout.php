@@ -118,6 +118,7 @@
             dateSendElement.value = `${formattedDate}`;
         }
 
+        localStorage.removeItem('cart');
         });    
         function parseCurrency(value) {
             return parseFloat(value.replace(/\./g, '').replace('đ', ''));

@@ -15,6 +15,7 @@
 
     function closeNotification() {
         document.getElementById('notification-popup').style.display = 'none';
+        window.location.href = 'index.php?act=product';
     }
 
 <?php

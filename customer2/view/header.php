@@ -40,7 +40,7 @@
                 <div class="cart-item"></div>
                 <div class="cart-summary">
                     <div class="cart-total">Tổng tiền: 0 VNĐ</div>
-                    <a href="index.php?act=checkout" class="checkout-button" id="bx">Thanh toán</a>
+                    <a href="index.php?act=checkout" class="checkout-button" id="checkoutBtn" style="pointer-events: none; opacity: 0.5;">Thanh toán</a>
                 </div>                
             </div>
         </div>
@@ -86,3 +86,4 @@
     </header>
 </body>
 </html>
+
