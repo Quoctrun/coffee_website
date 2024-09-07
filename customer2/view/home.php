@@ -1,3 +1,5 @@
+<?php include "../model/get_rand_product.php"; ?>
+
 <link rel="stylesheet" type="text/css" href="../view/css/style.css">
 <main class="main">
         <section class="main-header">
@@ -22,72 +24,33 @@
         
         <section class="main-main">
             <div class="hot-product">
-                <div class="title-and-views">
-                    <h2>Sản phẩm nổi bật</h2>
-                </div>
-                <section class="contain-items">
-                    <ul class="row search-result-items">
+            <div class="title-and-views">
+                <h2>Sản phẩm nổi bật</h2>
+            </div>
+            <section class="contain-items">
+                <ul class="row search-result-items">
+                    <?php foreach ($products as $product): ?>
                         <li class="product-item" data-category="caffee">
-                            <a href="index.php?act=product-detail&id=1" class="tag-product" style="text-decoration: none;">
-                                <img src="../view/img/cfden.png" alt="Product 1">
-                                <h2>Caffee Đen Đá</h2>
-                                <h3 class="price">20.000<u>đ</u></h3> 
+                            <a href="index.php?act=product-detail&id=<?php echo $product['product_id']; ?>" class="tag-product" style="text-decoration: none;">
+                                <img src="../view/img/<?php echo htmlspecialchars($product['img']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>">
+                                <h2><?php echo htmlspecialchars($product['product_name']); ?></h2>
+                                <h3 class="price"><?php echo $product['price']; ?><u>đ</u></h3> 
                             </a>
                             <div class="add-cart">
-                                <button class="add-to-cart" data-product-id="1" data-product-name="Cafee Đen Đá" data-product-price="20.000đ" data-product-img="../view/img/cfden.png">
+                                <button class="add-to-cart" 
+                                        data-product-id="<?php echo $product['product_id']; ?>" 
+                                        data-product-name="<?php echo htmlspecialchars($product['product_name']); ?>" 
+                                        data-product-price="<?php echo $product['price']; ?>đ" 
+                                        data-product-img="../view/img/<?php echo htmlspecialchars($product['img']); ?>">
                                     <i class='bx bx-cart-add'></i>
                                     <p>Đặt mua</p>
                                 </button>
-                                <input type="number" value="1" min="1" class="product-quantity" data-product-id="1">
+                                <input type="number" value="1" min="1" class="product-quantity" data-product-id="<?php echo $product['product_id']; ?>">
                             </div>
                         </li>
-
-                        <li class="product-item" data-category="caffee">
-                            <a href="index.php?act=product-detail&id=2" class="tag-product" style="text-decoration: none;">
-                                <img src="../view/img/cf-whiteSocola.png" alt="Product 2">
-                                <h2>Caffee Socola-Trắng</h2>
-                                <h3 class="price">25.000<u>đ</u></h3>
-                            </a>
-                            <div class="add-cart">
-                                <button class="add-to-cart" data-product-id="2" data-product-name="Caffee Socola-Trắng" data-product-price="25.000đ" data-product-img="../view/img/cf-whiteSocola.png">
-                                    <i class='bx bx-cart-add'></i>
-                                    <p>Đặt mua</p>
-                                </button>
-                                <input type="number" value="1" min="1" class="product-quantity" data-product-id="2">
-                            </div>
-                        </li>
-    
-                        <li class="product-item" data-category="caffee">
-                            <a href="index.php?act=product-detail&id=3" class="tag-product" style="text-decoration: none;">
-                                <img src="../view/img/Cappuccino.png" alt="Product 3">
-                                <h2>Cappuccino</h2>
-                                <h3 class="price">30.000<u>đ</u></h3>
-                            </a>
-                            <div class="add-cart">
-                                <button class="add-to-cart" data-product-id="3" data-product-name="Cappuccino" data-product-price="30.000đ" data-product-img="../view/img/Cappuccino.png">
-                                    <i class='bx bx-cart-add'></i>
-                                    <p>Đặt mua</p>
-                                </button>
-                                <input type="number" value="1" min="1" class="product-quantity" data-product-id="3">
-                            </div>
-                        </li>  
-
-                        <li class="product-item" data-category="caffee">
-                            <a href="index.php?act=product-detail&id=4" class="tag-product" style="text-decoration: none;">
-                                <img src="../view/img/Cold Brew Cam Úc.png" alt="Product 4">
-                                <h2>Cold Brew Cam Úc</h2>
-                                <h3 class="price">50.000<u>đ</u></h3>
-                            </a>
-                            <div class="add-cart">
-                                <button class="add-to-cart" data-product-id="4" data-product-name="Cold Brew Cam Úc" data-product-price="50.000đ" data-product-img="../view/img/Cold Brew Cam Úc.png">
-                                    <i class='bx bx-cart-add'></i>
-                                    <p>Đặt mua</p>
-                                </button>
-                                <input type="number" value="1" min="1" class="product-quantity" data-product-id="4">
-                            </div>
-                        </li>
-                    </ul>
-                </section>
+                    <?php endforeach; ?>
+                </ul>
+            </section>
             </div>
 
             <div class="containt-first">

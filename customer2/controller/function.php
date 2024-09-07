@@ -252,4 +252,20 @@
     
         return $users;
     }
+
+    function getRandomProducts($conn) {
+        $sql = "SELECT * FROM product ORDER BY RAND() LIMIT 4";
+        $result = mysqli_query($conn, $sql);
+
+        if (!$result) {
+            die("Lỗi truy vấn: " . mysqli_error($conn));
+        }
+
+        $products = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+            $products[] = $row;
+        }
+
+        return $products;
+    }
 ?>

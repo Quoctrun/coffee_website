@@ -31,7 +31,7 @@ if (isset($_POST["btn"])) {
         }
 
         echo "Đặt hàng thành công!";
-        header("location: ../controller/index.php?act=product");
+        // echo "<script>window.location.href = '../controller/index.php?act=edit_account';</script>";
     } else {
         echo "Lỗi: " . $mysqli->error;
     }
