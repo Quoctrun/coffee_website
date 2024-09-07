@@ -37,7 +37,7 @@
                     <div class="form-yes">
                         <h2>Bạn có chắc chắn Xác nhận sửa đổi không.</h2>
                         <div class="form-buttons">
-                            <button id="confirm-btn-yes" name="">Xác nhận</button>
+                            <button id="confirm-btn-yes" name="btn" type="submit">Xác nhận</button>
                             <button id="cancel-btn" type="button" name="cancel" onclick="hideAddProductForm()">Hủy</button>
                         </div>
                     </div>
