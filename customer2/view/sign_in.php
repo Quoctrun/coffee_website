@@ -1,3 +1,4 @@
+<?php include "../model/sign_in.php"; ?>
 <!DOCTYPE html>
 <html lang="vn">
 <head>
@@ -29,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="form-sign-up">
-                                <form action = "../model/sign_in.php" method="POST" >
+                                <form method="POST" >
                                     <div class="input">
                                         <div class="id-ac">
                                             <input id="phonesigupin" class="input-id" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone_number" aria-invalid="false">

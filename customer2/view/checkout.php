@@ -44,7 +44,7 @@
             <div class="inf-cus-order">
                 <b>Địa chỉ nhận hàng:*</b>
                 <div class="detail-inf-cus-order">
-                    <textarea class="input-id" id="oderaddress" placeholder="Nhập địa chỉ nhận hàng" autocomplete="tel" aria-invalid="false" name=""></textarea>
+                    <input class="input-id" id="oderaddress" placeholder="Nhập địa chỉ nhận hàng" autocomplete="tel" aria-invalid="false" name="order_address">
                     <span class="error-message" id="oderaddress-error"></span>
                 </div>
             </div>

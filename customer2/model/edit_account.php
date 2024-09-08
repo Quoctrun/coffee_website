@@ -1,5 +1,6 @@
 <?php
     include "connect.php";
+    include "../controller/function.php";
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
@@ -14,7 +15,7 @@
         $result = mysqli_query($conn, $sql);
         $row_phone = mysqli_fetch_array($result);
 
-        if ($row_phone[0] > 0) {
+        if ($row_phone[0] > 0 && $phone_number != getUserInfor($user_id, "phone_number") ) {
             echo "<script>
             alert('Số điện thoại đã được sử dụng!!');
             </script>";;

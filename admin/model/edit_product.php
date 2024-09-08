@@ -19,6 +19,7 @@
         if(mysqli_query($conn, $sql)){
             if($row['img'] != $img){
                 move_uploaded_file($img_tmp_name, '../view/img/product/'.$img);
+                copy('../view/img/product/'.$img, '../../customer2/view/img/product/'.$img);
             }
             echo "<script>
                 alert('Cập nhập thành công!!');

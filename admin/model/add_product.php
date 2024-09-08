@@ -18,6 +18,8 @@
         if (mysqli_query($conn, $sql)) {
             // Di chuyển file ảnh đã tải lên vào thư mục "img/product/"
             move_uploaded_file($image_tmp_name, '../view/img/product/' . $image);
+            copy('../view/img/product/'.$image, '../../customer2/view/img/product/'.$image);
+
             echo "<script>
                 alert('Cập nhập thành công!!');
                 window.location.href = '../controller/index.php?act=manage-products';

@@ -37,9 +37,10 @@ if (isset($_POST["btn"])) {
     $cartData = json_decode($_POST['cart_data'], true);
     $totalAmount = $_POST['total_amount'];
     $orderDate = $_POST['order_date'];
+    $order_address = $_POST['order_address'];
 
-    $sql = "INSERT INTO `order`(total_payment, order_time, Status, user_id) 
-    VALUES ('$totalAmount', '$orderDate', 'Pending', '$user_id')";
+    $sql = "INSERT INTO `order`(total_payment, order_time, Status, user_id, order_address) 
+    VALUES ('$totalAmount', '$orderDate', 'Pending', '$user_id', '$order_address')";
 
     if ($conn->query($sql)) {
         $orderId = $conn->insert_id;

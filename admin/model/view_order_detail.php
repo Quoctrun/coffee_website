@@ -39,6 +39,7 @@ echo "<p><strong>Thời gian đặt hàng:</strong> " . getOrderInfor($order_id,
 <?php
 echo "<p><strong>Tổng tiền:</strong> $" . getOrderInfor($order_id, 'total_payment').'đ' . "</p>";
 echo "<p><strong>Phương thức thanh toán:</strong> " . "Thanh toán khi nhận hàng" . "</p>";
+echo "<p><strong>Địa chỉ giao hàng:</strong> " . getOrderInfor($order_id, 'order_address')  . "</p>";
 echo "<p><strong>Trang thái đơn hàng:</strong> " . getOrderInfor($order_id, 'Status') . "</p>";
 ?>
 </div>
