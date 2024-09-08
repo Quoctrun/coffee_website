@@ -55,7 +55,7 @@ if (isset($_POST["btn"])) {
         }
 
         echo "showNotification('Đặt hàng thành công!! (:');";
-        // echo "<script>window.location.href = '../controller/index.php?act=edit_account';</script>";
+        //echo "<script>window.location.href = '../controller/index.php?act=edit_account';</script>";
     } else {
         echo "showNotification('Lỗi: " . $mysqli->error . "!! :( ');";
         //echo "Lỗi: " . $mysqli->error;

@@ -820,7 +820,7 @@ body {
     margin-bottom: 20px;
 }
 
-.detail-container input[type="text"] {
+.detail-container input[type="text"], .input-id {
     width: calc(100% - 22px); 
     padding: 10px;
     border: 1px solid #ddd;
@@ -946,12 +946,6 @@ body {
     font-size: 14px;
     display: none;
     margin-bottom: 10px;
-}
-
-textarea.input-id {
-    width: 100%;
-    height: 110px;
-    resize: vertical;
 }
 /*--Css Footer--*/
 .footer {
