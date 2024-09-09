@@ -23,175 +23,175 @@ const products = [
 ];
 
 
-const orders = [
-    {
-        id: 1,
-        products: [
-            { id: 1, quantity: 2 },  // Caffee Đen Đá
-            { id: 3, quantity: 1 },  // Cappuccino
-            { id: 16, quantity: 1 }  // Chocolate Mousse
-        ],
-        customerName: 'John Doe',
-        customerPhone: '1234567890',
-        deliveryMethod: 'standard',
-        paymentMethod: 'credit-card',
-        promoCode: 'WELCOME10',
-        orderDate: '2024-08-01',
-        totalMoney: '140.000',
-        status: 'Pending',
-        customerAccountName: 'customer1'
-    },
-    {
-        id: 2,
-        products: [
-            { id: 5, quantity: 2 },  // Cold Brew Dâu Tây
-            { id: 12, quantity: 1 }, // Trà Đá Mận (Maesil)
-            { id: 18, quantity: 1 }  // Matcha Tiramisu
-        ],
-        customerName: 'Jane Doe',
-        customerPhone: '0987654321',
-        deliveryMethod: 'express',
-        paymentMethod: 'paypal',
-        promoCode: '',
-        orderDate: '2024-08-02',
-        totalMoney: '220.000',
-        status: 'Shipped',
-        customerAccountName: 'customer1'
-    },
-    {
-        id: 3,
-        products: [
-            { id: 7, quantity: 1 },  // Cold Brew Macchiato
-            { id: 9, quantity: 2 },  // Dalgona Coffee
-            { id: 20, quantity: 2 }  // Vanilla Dream Crepes
-        ],
-        customerName: 'Michael Smith',
-        customerPhone: '1122334455',
-        deliveryMethod: 'standard',
-        paymentMethod: 'credit-card',
-        promoCode: 'SUMMER20',
-        orderDate: '2024-08-03',
-        totalMoney: '340.000',
-        status: 'Delivered',
-        customerAccountName: 'customer1'
-    },
-    {
-        id: 4,
-        products: [
-            { id: 11, quantity: 2 }, // Matcha Espresso
-            { id: 14, quantity: 3 }  // Trà Chanh Giây
-        ],
-        customerName: 'Emily Johnson',
-        customerPhone: '5566778899',
-        deliveryMethod: 'standard',
-        paymentMethod: 'credit-card',
-        promoCode: '',
-        orderDate: '2024-08-04',
-        totalMoney: '245.000',
-        status: 'Pending',
-        customerAccountName: 'customer1'
-    },
-    {
-        id: 5,
-        products: [
-            { id: 2, quantity: 3 },  // Caffee Socola-Trắng
-            { id: 16, quantity: 2 }  // Chocolate Mousse
-        ],
-        customerName: 'Sarah Brown',
-        customerPhone: '6677889900',
-        deliveryMethod: 'express',
-        paymentMethod: 'paypal',
-        promoCode: 'AUTUMN15',
-        orderDate: '2024-08-05',
-        totalMoney: '265.000',
-        status: 'Cancelled',
-        customerAccountName: 'customer1'
-    },
-    {
-        id: 6,
-        products: [
-            { id: 4, quantity: 1 },  // Cold Brew Cam Úc
-            { id: 13, quantity: 2 }, // Trà Hoa Oải Hương
-            { id: 19, quantity: 1 }  // Rose Panna Cotta
-        ],
-        customerName: 'Daniel Lee',
-        customerPhone: '3344556677',
-        deliveryMethod: 'express',
-        paymentMethod: 'credit-card',
-        promoCode: '',
-        orderDate: '2024-08-06',
-        totalMoney: '245.000',
-        status: 'Shipped',
-        customerAccountName: 'customer1'
-    },
-    {
-        id: 7,
-        products: [
-            { id: 6, quantity: 3 },  // Cold Brew Hạnh Nhân
-            { id: 15, quantity: 2 }  // Trà Earl Grey
-        ],
-        customerName: 'Laura Wilson',
-        customerPhone: '7788990011',
-        deliveryMethod: 'standard',
-        paymentMethod: 'paypal',
-        promoCode: '',
-        orderDate: '2024-08-07',
-        totalMoney: '290.000',
-        status: 'Delivered',
-        customerAccountName: 'customer1'
-    },
-    {
-        id: 8,
-        products: [
-            { id: 10, quantity: 1 }, // Boozy Whipped Coffee
-            { id: 17, quantity: 1 }, // Croissant Kem Dâu
-            { id: 20, quantity: 1 }  // Vanilla Dream Crepes
-        ],
-        customerName: 'Olivia Martinez',
-        customerPhone: '8899001122',
-        deliveryMethod: 'standard',
-        paymentMethod: 'credit-card',
-        promoCode: '',
-        orderDate: '2024-08-08',
-        totalMoney: '220.000',
-        status: 'Pending',
-        customerAccountName: 'customer1'
-    },
-    {
-        id: 9,
-        products: [
-            { id: 8, quantity: 1 },  // Coffee Jelly
-            { id: 12, quantity: 1 }, // Trà Đá Mận (Maesil)
-            { id: 15, quantity: 1 }  // Trà Earl Grey
-        ],
-        customerName: 'James Taylor',
-        customerPhone: '9900112233',
-        deliveryMethod: 'express',
-        paymentMethod: 'paypal',
-        promoCode: 'WINTER25',
-        orderDate: '2024-08-09',
-        totalMoney: '155.000',
-        status: 'Shipped',
-        customerAccountName: 'customer1'
-    },
-    {
-        id: 10,
-        products: [
-            { id: 3, quantity: 2 },  // Cappuccino
-            { id: 4, quantity: 1 },  // Cold Brew Cam Úc
-            { id: 18, quantity: 1 }  // Matcha Tiramisu
-        ],
-        customerName: 'Sophia Anderson',
-        customerPhone: '2233445566',
-        deliveryMethod: 'standard',
-        paymentMethod: 'credit-card',
-        promoCode: 'SPRING10',
-        orderDate: '2024-08-10',
-        totalMoney: '180.000',
-        status: 'Delivered',
-        customerAccountName: 'customer1'
-    }
-];
+// const orders = [
+//     {
+//         id: 1,
+//         products: [
+//             { id: 1, quantity: 2 },  // Caffee Đen Đá
+//             { id: 3, quantity: 1 },  // Cappuccino
+//             { id: 16, quantity: 1 }  // Chocolate Mousse
+//         ],
+//         customerName: 'John Doe',
+//         customerPhone: '1234567890',
+//         deliveryMethod: 'standard',
+//         paymentMethod: 'credit-card',
+//         promoCode: 'WELCOME10',
+//         orderDate: '2024-08-01',
+//         totalMoney: '140.000',
+//         status: 'Pending',
+//         customerAccountName: 'customer1'
+//     },
+//     {
+//         id: 2,
+//         products: [
+//             { id: 5, quantity: 2 },  // Cold Brew Dâu Tây
+//             { id: 12, quantity: 1 }, // Trà Đá Mận (Maesil)
+//             { id: 18, quantity: 1 }  // Matcha Tiramisu
+//         ],
+//         customerName: 'Jane Doe',
+//         customerPhone: '0987654321',
+//         deliveryMethod: 'express',
+//         paymentMethod: 'paypal',
+//         promoCode: '',
+//         orderDate: '2024-08-02',
+//         totalMoney: '220.000',
+//         status: 'Shipped',
+//         customerAccountName: 'customer1'
+//     },
+//     {
+//         id: 3,
+//         products: [
+//             { id: 7, quantity: 1 },  // Cold Brew Macchiato
+//             { id: 9, quantity: 2 },  // Dalgona Coffee
+//             { id: 20, quantity: 2 }  // Vanilla Dream Crepes
+//         ],
+//         customerName: 'Michael Smith',
+//         customerPhone: '1122334455',
+//         deliveryMethod: 'standard',
+//         paymentMethod: 'credit-card',
+//         promoCode: 'SUMMER20',
+//         orderDate: '2024-08-03',
+//         totalMoney: '340.000',
+//         status: 'Delivered',
+//         customerAccountName: 'customer1'
+//     },
+//     {
+//         id: 4,
+//         products: [
+//             { id: 11, quantity: 2 }, // Matcha Espresso
+//             { id: 14, quantity: 3 }  // Trà Chanh Giây
+//         ],
+//         customerName: 'Emily Johnson',
+//         customerPhone: '5566778899',
+//         deliveryMethod: 'standard',
+//         paymentMethod: 'credit-card',
+//         promoCode: '',
+//         orderDate: '2024-08-04',
+//         totalMoney: '245.000',
+//         status: 'Pending',
+//         customerAccountName: 'customer1'
+//     },
+//     {
+//         id: 5,
+//         products: [
+//             { id: 2, quantity: 3 },  // Caffee Socola-Trắng
+//             { id: 16, quantity: 2 }  // Chocolate Mousse
+//         ],
+//         customerName: 'Sarah Brown',
+//         customerPhone: '6677889900',
+//         deliveryMethod: 'express',
+//         paymentMethod: 'paypal',
+//         promoCode: 'AUTUMN15',
+//         orderDate: '2024-08-05',
+//         totalMoney: '265.000',
+//         status: 'Cancelled',
+//         customerAccountName: 'customer1'
+//     },
+//     {
+//         id: 6,
+//         products: [
+//             { id: 4, quantity: 1 },  // Cold Brew Cam Úc
+//             { id: 13, quantity: 2 }, // Trà Hoa Oải Hương
+//             { id: 19, quantity: 1 }  // Rose Panna Cotta
+//         ],
+//         customerName: 'Daniel Lee',
+//         customerPhone: '3344556677',
+//         deliveryMethod: 'express',
+//         paymentMethod: 'credit-card',
+//         promoCode: '',
+//         orderDate: '2024-08-06',
+//         totalMoney: '245.000',
+//         status: 'Shipped',
+//         customerAccountName: 'customer1'
+//     },
+//     {
+//         id: 7,
+//         products: [
+//             { id: 6, quantity: 3 },  // Cold Brew Hạnh Nhân
+//             { id: 15, quantity: 2 }  // Trà Earl Grey
+//         ],
+//         customerName: 'Laura Wilson',
+//         customerPhone: '7788990011',
+//         deliveryMethod: 'standard',
+//         paymentMethod: 'paypal',
+//         promoCode: '',
+//         orderDate: '2024-08-07',
+//         totalMoney: '290.000',
+//         status: 'Delivered',
+//         customerAccountName: 'customer1'
+//     },
+//     {
+//         id: 8,
+//         products: [
+//             { id: 10, quantity: 1 }, // Boozy Whipped Coffee
+//             { id: 17, quantity: 1 }, // Croissant Kem Dâu
+//             { id: 20, quantity: 1 }  // Vanilla Dream Crepes
+//         ],
+//         customerName: 'Olivia Martinez',
+//         customerPhone: '8899001122',
+//         deliveryMethod: 'standard',
+//         paymentMethod: 'credit-card',
+//         promoCode: '',
+//         orderDate: '2024-08-08',
+//         totalMoney: '220.000',
+//         status: 'Pending',
+//         customerAccountName: 'customer1'
+//     },
+//     {
+//         id: 9,
+//         products: [
+//             { id: 8, quantity: 1 },  // Coffee Jelly
+//             { id: 12, quantity: 1 }, // Trà Đá Mận (Maesil)
+//             { id: 15, quantity: 1 }  // Trà Earl Grey
+//         ],
+//         customerName: 'James Taylor',
+//         customerPhone: '9900112233',
+//         deliveryMethod: 'express',
+//         paymentMethod: 'paypal',
+//         promoCode: 'WINTER25',
+//         orderDate: '2024-08-09',
+//         totalMoney: '155.000',
+//         status: 'Shipped',
+//         customerAccountName: 'customer1'
+//     },
+//     {
+//         id: 10,
+//         products: [
+//             { id: 3, quantity: 2 },  // Cappuccino
+//             { id: 4, quantity: 1 },  // Cold Brew Cam Úc
+//             { id: 18, quantity: 1 }  // Matcha Tiramisu
+//         ],
+//         customerName: 'Sophia Anderson',
+//         customerPhone: '2233445566',
+//         deliveryMethod: 'standard',
+//         paymentMethod: 'credit-card',
+//         promoCode: 'SPRING10',
+//         orderDate: '2024-08-10',
+//         totalMoney: '180.000',
+//         status: 'Delivered',
+//         customerAccountName: 'customer1'
+//     }
+// ];
 
 const sales = [
     {
@@ -206,7 +206,7 @@ const sales = [
                 "Khách hàng ghé thăm cửa hàng mới có cơ hội nhận được những phần quà vô cùng hấp dẫn."
             ]
         },
-        detailsImage: "img/grand-opening.jpg",
+        detailsImage: "../view/img/grand-opening.jpg",
         detail: {
             content: [
                 "Từ ngày 03.08.2024 - 16.08.2024, khi khách hàng ghé thăm cửa hàng và mua hóa đơn từ 200,000₫ sẽ được rút thăm với cơ hội 100% trúng thưởng một trong những phần quà sau:"
@@ -235,7 +235,7 @@ const sales = [
                 "Khách hàng ghé thăm cửa hàng hoặc đến với Webshop của Coffee Monster lần đầu sẽ được nhận những ưu đãi cực kỳ hấp dẫn."
             ]
         },
-        detailsImage: "img/ban-moi.jpg",
+        detailsImage: "../view/img/ban-moi.jpg",
         detail: {
             content: [
                 "Từ ngày 03.08.2024, khi khách hàng ghé thăm cửa hàng và mua lần đầu thì sẽ có cơ hội trúng giải thưởng vô cùng hấp dẫn.",
@@ -263,7 +263,7 @@ const sales = [
                 "Khách hàng ghé thăm cửa hàng mới có thể tham gia sự kiện này."
             ]
         },
-        detailsImage: "img/Vong-quay.jpg",
+        detailsImage: "../view/img/Vong-quay.jpg",
         detail: {
             content: [
                 "Từ ngày 10.08.2024 - 16.08.2024, khi khách hàng ghé thăm cửa hàng và mua bất kì sản phẩm gì thì sẽ có 100% cơ hội nhận quà bất ngờ từ Vòng Quay may mắn, với các giải thưởng sau:"
@@ -292,7 +292,7 @@ const sales = [
                 "Khách hàng ghé thăm cửa hàng mới có cơ hội nhận được những phần quà vô cùng hấp dẫn."
             ]
         },
-        detailsImage: "img/mini-game.jpg",
+        detailsImage: "../view/img/mini-game.jpg",
         detail: {
             content: [
                 "Từ ngày 16.08.2024 - 19.08.2024, khi khách hàng ghé thăm cửa hàng và mua sẽ được tham gia vào sự kiện Mini Game - Chụp ảnh Monster rinh quà.",
@@ -323,7 +323,7 @@ const sales = [
                 "Xin trân trọng thông báo về việc bảo trì hệ thống Webshop Coffee Monster."
             ]
         },
-        detailsImage: "img/bao-tri.jpg",
+        detailsImage: "../view/img/bao-tri.jpg",
         detail: {
             content: [
                 "Từ ngày 20.08.2024 - 21.08.2024, hệ thống Webshop Coffee Monster sẽ bảo trì để nâng cấp và hoàn thiện, tạo điều kiện và trải nghiệm tuyệt vời cho khách hàng của cửa hàng.",

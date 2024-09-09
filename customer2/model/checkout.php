@@ -7,7 +7,7 @@ if(!isset($_SESSION['mySession'])){
 ?>
 
 <div id="notification-popup">
-    <div class="notification-content" style="width: 30%; height: 20%;">
+    <div class="notification-content">
         <h2 id="notification-message" style="justify-content: center; display: flex; height: 55%;"></h2>
         <div class="form-buttons" style="width: 100%; align-items: center; flex-direction: column;">
             <button class="button-ex" onclick="closeNotification()">Đóng</button>

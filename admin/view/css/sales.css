@@ -187,7 +187,7 @@ main {
     align-items: center;
 }
 
-.search-container, .modal-content, .detail-salse-prv {
+.formcsla, .search-container, .modal-content, .detail-salse-prv {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;

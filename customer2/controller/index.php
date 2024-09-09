@@ -41,7 +41,10 @@ $isLoggedIn = isset($_SESSION['mySession']);
                 break; 
             case 'change_password':
                 include "../view/change_password.php";
-                break;   
+                break;  
+            case 'view_order_detail':
+                include "../view/view_order_detail.php";
+                break;  
             default:
                 include "../view/home.php";
                 break;

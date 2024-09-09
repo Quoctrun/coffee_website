@@ -39,7 +39,7 @@
         <button class="add-notification-button" onclick="showAddNotificationForm()">Thêm Thông Báo</button>
 
         <div id="addNotificationForm" style="display: none;">
-            <form>
+            <form class="formcsla">
                 <h3>Thêm Thông Báo Mới</h3>
                 <label for="notificationTitle">Tiêu đề:</label>
                 <input type="text" id="notificationTitle" required><br>
@@ -60,7 +60,7 @@
 
         <!-- Edit Notification Form -->
         <div id="editNotificationForm" style="display: none;">
-            <form>
+            <form class="formcsla">
                 <h2>Chỉnh sửa Thông Báo</h2>
                 <label for="editNotificationTitle">Tiêu đề:</label>
                 <input type="text" id="editNotificationTitle" required><br>

@@ -170,7 +170,7 @@ main {
     background-color: #218838;
 }
 
-#addProductFr, #confirmationModal, #backround-form-buttons, .bkrdbtt {
+#addProductFr, #confirmationModal, #backround-form-buttons, .bkrdbtt, #notification-popup {
     display: none;
     flex-direction: column;
     opacity: 1;
@@ -187,7 +187,7 @@ main {
     align-items: center;
 }
 
-.search-container, #addProductForm, .form-yes {
+.search-container, #addProductForm, .form-yes, .notification-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -231,7 +231,7 @@ form input[type="file"] {
     justify-content: space-between;
 }
 
-form button, .yesbtnow {
+form button, .yesbtnow, .button-ex {
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -257,7 +257,7 @@ form button, .yesbtnow {
     transition: background-color 0.3s ease;
 }
 
-form button:last-child {
+form button:last-child, .button-ex {
     background-color: #dc3545;
     margin-right: 0;
 }
@@ -266,7 +266,7 @@ form button:hover, .yesbtnow:hover {
     background-color: #218838;
 }
 
-form button:last-child:hover, .nobtnow:hover {
+form button:last-child:hover, .nobtnow:hover, .button-ex:hover {
     background-color: #c82333;
 }
 

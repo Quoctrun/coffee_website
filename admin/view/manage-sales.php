@@ -42,7 +42,7 @@
         <button class="add-sales-button" onclick="showAddSalesForm()">Add sales</button>
 
         <div id="addsalesForm" style="display: none;">
-            <form>
+            <form class="formcsla">
                 <h3>Add New Sale</h3>
                 <label for="salesTitle">Title:</label>
                 <input type="text" id="salesTitle" required>
@@ -85,7 +85,7 @@
         </div>             
 
         <div id="editsalesForm" style="display: none;">
-            <form>
+            <form class="formcsla">
                 <h2>Edit Sales</h2>
                 <label for="editSalesTitle">Title:</label>
                 <input type="text" id="editSalesTitle" required>
@@ -153,7 +153,7 @@
             
             <!-- Form for adding/editing discount codes -->
             <div id="code-form" style="display: none;">
-                <form>
+                <form class="formcsla">
                     <h2 id="form-title">Add/Edit Discount Code</h2>
                     <label for="code-name">Code Name:</label>
                     <input type="text" id="code-name" required>
