@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="lists">
                     <div class="row list">
-                        <a href="index.php?act=sale&id=1" class="list-item">
+                        <a href="index.php?act=sale_detail&id=1" class="list-item">
                             <div class="list-img">
                                 <img class="imgl imgl-loaded" data-imgl-tyle="image" data-imgl-src="../view/img/grand-opening.jpg" src="../view/img/grand-opening.jpg">
                             </div>
@@ -30,7 +30,7 @@
                         </a>
                     </div>
                     <div class="row list">
-                        <a href="../view/sale-detail.php?id=3" class="list-item">
+                        <a href="index.php?act=sale_detail&id=3" class="list-item">
                             <div class="list-img">
                                 <img class="imgl imgl-loaded" data-imgl-tyle="image" data-imgl-src="../view/img/Vong-quay.jpg" src="../view/img/Vong-quay.jpg">
                             </div>
@@ -43,7 +43,7 @@
                         </a>
                     </div>
                     <div class="row list">
-                        <a href="../view/sale-detail.php?id=4" class="list-item">
+                        <a href="index.php?act=sale_detail&id=4" class="list-item">
                             <div class="list-img">
                                 <img class="imgl imgl-loaded" data-imgl-tyle="image" data-imgl-src="../view/img/mini-game.jpg" src="../view/img/mini-game.jpg">
                             </div>
@@ -56,7 +56,7 @@
                         </a>
                     </div>
                     <div class="row list">
-                        <a href="../view/sale-detail.php?id=5" class="list-item">
+                        <a href="index.php?act=sale_detail&id=5" class="list-item">
                             <div class="list-img">
                                 <img class="imgl imgl-loaded" data-imgl-tyle="image" data-imgl-src="../view/img/bao-tri.jpg" src="../view/img/bao-tri.jpg">
                             </div>
