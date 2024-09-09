@@ -42,7 +42,7 @@
             $sql = "UPDATE `user` SET user_name = '$user_name', phone_number ='$phone_number' WHERE user_id = '$user_id'";
         
             if(mysqli_query($conn, $sql)){
-                echo "showNotification('Mật khẩu đã được thay đổi thành công!! (:');";
+                echo "showNotification('Cập nhập thông tin thành công!!');";
             }
             else{
                 echo "sai";

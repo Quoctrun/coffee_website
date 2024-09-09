@@ -2,7 +2,7 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    if(!isset($_SESSION['mySession'])){
+    if(!isset($_SESSION['mySession']) || !isset($_SESSION['mySession_level'])){
         header('location: ../view/sign_in.php');
     }
 ?>
@@ -66,7 +66,7 @@
                 </div>
                 <div id="backround-form-buttons" style="display: none;">
                     <div class="form-yes" style="width: 30%; height: 30%;">
-                        <h2 style="justify-content: center; display: flex; height: 55%;">Bạn có chắc chắn Xác nhận sửa đổi không.</h2>
+                        <h2 style="justify-content: center; display: flex; height: 55%;">Xác nhận thêm tài khoản?</h2>
                         <div class="form-buttons">
                             <button id="submit br" type="submit" name="add">Xác nhận</button>
                             <button id ="br" type="button" onclick="hideAccountYes()">Hủy</button>

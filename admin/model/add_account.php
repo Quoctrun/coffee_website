@@ -28,19 +28,29 @@
         $phone_number = $_POST['phone_number'];
         $level = $_POST['level'];
 
-        // Câu truy vấn SQL để thêm sản phẩm mới vào cơ sở dữ liệu
-        $sql = "INSERT INTO `user` (user_name, user_pass, phone_number, level) 
+        $sql = "SELECT COUNT(*) FROM user WHERE phone_number = '$phone_number'";
+        $result = mysqli_query($conn, $sql);
+        $row_phone = mysqli_fetch_array($result);
+
+        if ($row_phone[0] > 0) {
+            echo "showNotification('Số điện thoại đã được sử dụng!!');";
+        }
+        else{
+            $sql = "INSERT INTO `user` (user_name, user_pass, phone_number, level) 
                 VALUES ('$user_name', '$user_pass', '$phone_number', '$level')";
 
-        // Thực hiện truy vấn
-        if (mysqli_query($conn, $sql)) {
-            echo "showNotification('Thêm tài khoản mới thành công');";
-           // exit();
-        } else {
-            echo "<script>
-            alert('Lỗi: " . mysqli_error($conn) . "');
-            </script>";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "showNotification('Thêm tài khoản mới thành công');";
+            
+            } else {
+                echo "<script>
+                alert('Lỗi: " . mysqli_error($conn) . "');
+                </script>";
+            }
         }
+
+        
     }
 ?>
 </script>

@@ -34,6 +34,8 @@
         $sql .= " AND o.Status = '$status_filter'";
     }
 
+    $sql .= " ORDER BY o.order_time ASC";
+
     
     $orders = mysqli_query($conn, $sql);
 ?>

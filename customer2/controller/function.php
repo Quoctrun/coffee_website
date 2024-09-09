@@ -49,7 +49,7 @@
 
     function getOrderInfor($order_id, $infor) {
         global $conn;
-        $valid_columns = ['total_payment', 'order_time', 'Status', 'user_id'];
+        $valid_columns = ['total_payment', 'order_time', 'Status', 'user_id', 'order_address'];
         if (!in_array($infor, $valid_columns)) {
             return null; 
         }

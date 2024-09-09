@@ -1,3 +1,22 @@
+<div id="notification-popup">
+    <div class="notification-content">
+        <h2 id="notification-message" style="justify-content: center; display: flex; height: 55%;"></h2>
+        <div class="form-buttons" style="width: 100%; align-items: center; flex-direction: column;">
+            <button class="button-ex" onclick="closeNotification()">Đóng</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showNotification(message) {
+    document.getElementById('notification-message').innerText = message;
+    document.getElementById('notification-popup').style.display = 'flex';
+    }
+
+    function closeNotification() {
+        document.getElementById('notification-popup').style.display = 'none';
+        window.location.href = '../view/sign_in.php';
+    }
 <?php 
     include "connect.php";
 
@@ -12,12 +31,13 @@
         if(mysqli_num_rows($result) == 1){
             $user = mysqli_fetch_assoc($result);
             $_SESSION['mySession'] = $user['user_id'];
+            if($user['level'] == 0){
+                $_SESSION['mySession_level'] = $user['level'];
+            }
             header("location:../controller/index.php");
         }else{
-            echo "<script>
-            alert('Số điện thoại không hợp lệ hoặc Mật khẩu sai!!');
-            window.location.href = '../view/sign_in.php';
-            </script>";
+            echo "showNotification('Số điện thoại không hợp lệ hoặc Mật khẩu sai!!');";
         }
     }
 ?>
+</script>
