@@ -2,7 +2,7 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    if(!isset($_SESSION['mySession']) || !isset($_SESSION['mySession_level'])){
+    if(!isset($_SESSION['mySession_admin']) || !isset($_SESSION['mySession_level'])){
         header('location: ../view/sign_in.php');
     }
 ?>

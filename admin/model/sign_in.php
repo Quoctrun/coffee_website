@@ -30,7 +30,7 @@
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) == 1){
             $user = mysqli_fetch_assoc($result);
-            $_SESSION['mySession'] = $user['user_id'];
+            $_SESSION['mySession_admin'] = $user['user_id'];
             if($user['level'] == 0){
                 $_SESSION['mySession_level'] = $user['level'];
             }

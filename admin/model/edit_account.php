@@ -24,7 +24,7 @@
         session_start();
     }
 
-    $user_id = $_SESSION['mySession'];
+    $user_id = $_SESSION['mySession_admin'];
     
     if(isset($_POST['btn'])){
         $user_name = $_POST['user_name'];
